@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+header {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    height: 80vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.btn {
+    background: #27ae60;
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+section {
+    padding: 80px 50px;
+    text-align: center;
+}
+
+.card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+footer {
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.edit-notice {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.program-container {
+    max-width: 1000px;
+    margin: 0 auto; /* Supaya kontennya di tengah */
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Jarak antar baris program */
+}
+
+.program-item {
+    display: flex;
+    align-items: center; /* Teks dan foto rata tengah secara vertikal */
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden; /* Biar ujung foto ikut tumpul */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.program-item:hover {
+    transform: translateY(-5px); /* Efek melayang saat kursor di atasnya */
+}
+
+/* Biar posisi foto-teks selang-seling */
+.program-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.program-image {
+    flex: 1; /* Foto ambil 50% lebar */
+    height: 300px; /* Atur tinggi tetap untuk foto */
+}
+
+.program-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Foto bakal penuh tanpa distorsi */
+    display: block;
+}
+
+.program-text {
+    flex: 1; /* Teks ambil 50% lebar */
+    padding: 40px;
+    text-align: left; /* Teks rata kiri */
+}
+
+.program-text h3 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #27ae60; /* Garis bawah hijau di judul */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.program-text p {
+    color: #555;
+    font-size: 1.1rem;
+}
+
+/* Gaya visual saat teks sedang diedit (contenteditable) */
+[contenteditable="true"]:focus {
+    outline: 2px dashed #27ae60;
+    padding: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+    .program-item, .program-item.reverse {
+        flex-direction: column; /* Jadi tumpuk vertikal di HP */
+    }
+    
+    .program-image {
+        width: 100%;
+        height: 200px; /* Lebih pendek di HP */
+    }
+    
+    .program-text {
+        padding: 20px;
+    }
+}    
+
+.program-container {
+    max-width: 1000px;
+    margin: 50px auto; /* Jarak atas-bawah dan di tengah */
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Jarak antar baris program */
+}
+
+.program-item {
+    display: flex;
+    align-items: center; /* Teks dan foto rata tengah secara vertikal */
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden; /* Biar ujung foto ikut tumpul sesuai border-radius */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+/* Biar posisi foto-teks selang-seling */
+.program-item.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Container untuk foto */
+.program-image-wrapper {
+    flex: 1; /* Foto ambil 50% lebar */
+    height: 350px; /* Atur tinggi tetap untuk semua container foto */
+    overflow: hidden;
+}
+
+/* Kunci CSS agar foto selalu rapi: */
+.program-photo {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover adalah kuncinya. Foto akan dipotong (crop) otomatis
+       agar memenuhi container tanpa gepeng, peduli berapa pun ukuran aslinya. */
+    object-fit: cover; 
+    object-position: center; /* Fokus pemotongan di tengah foto */
+    display: block;
+}
+
+.program-text {
+    flex: 1; /* Teks ambil 50% lebar */
+    padding: 50px;
+    text-align: left; /* Teks rata kiri */
+}
+
+.program-text h3 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.program-text p {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+    .program-item, .program-item.reverse {
+        flex-direction: column; /* Jadi tumpuk vertikal di HP */
+    }
+    
+    .program-image-wrapper {
+        width: 100%;
+        height: 250px; /* Lebih pendek di HP */
+    }
+}
