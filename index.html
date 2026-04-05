@@ -1,78 +1,288 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yayasan Tran Mahsur - Proposal Digital</title>
+    <meta name="description" content="Yayasan Trah Manshur - Proposal Digital Pemberdayaan dan Pengabdian Masyarakat">
+    <title>Yayasan Trah Manshur — Proposal Digital 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Tran Mahsur</div>
-            <ul>
-                <li><a href="#tentang">Tentang</a></li>
-                <li><a href="#program">Program</a></li>
-                <li><a href="#kontak">Kontak</a></li>
-            </ul>
-        </nav>
-        <div class="hero">
-            <h1>Membangun Masa Depan Bersama Tran Mahsur</h1>
-            <p>Proposal Pemberdayaan dan Pengabdian Masyarakat</p>
-            <a href="#tentang" class="btn">Pelajari Lebih Lanjut</a>
+
+<!-- ═══════════ NAVIGASI ═══════════ -->
+<nav class="nav" id="mainNav">
+    <div class="nav__logo">Trah <span>Manshur</span></div>
+    <ul class="nav__links">
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#video-profil">Profil</a></li>
+        <li><a href="#galeri">Galeri</a></li>
+        <li><a href="#download">Unduh</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+        <li class="nav__lang">
+            <a href="index.html" class="active">ID</a>
+            <span class="sep">·</span>
+            <a href="en.html">EN</a>
+            <span class="sep">·</span>
+            <a href="ar.html">AR</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<div class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__vignette"></div>
+    <div class="hero__line"></div>
+    <div class="hero__content">
+        <span class="hero__badge">Proposal Digital 2026</span>
+        <h1 class="hero__title">Membangun Masa Depan<br><em>Bersama Trah Manshur</em></h1>
+        <p class="hero__subtitle">Proposal Pemberdayaan dan Pengabdian Masyarakat untuk menciptakan dampak nyata bagi sesama — berkelanjutan, terukur, dan penuh makna.</p>
+        <div class="hero__actions">
+            <a href="#tentang" class="btn-gold">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+                Pelajari Lebih Lanjut
+            </a>
+            <a href="#download" class="btn-outline">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
+                Unduh Proposal PDF
+            </a>
         </div>
-    </header>
+    </div>
+    <div class="hero__scroll">
+        Scroll
+        <div class="hero__scroll-line"></div>
+    </div>
+</div>
 
-    <section id="tentang">
-        <h2>Tentang Yayasan</h2>
-        <p>Yayasan Tran Mahsur adalah organisasi yang bergerak di bidang [Sebutkan Bidang: Sosial/Pendidikan/Keagamaan]. Kami berdedikasi untuk memberikan dampak positif bagi masyarakat melalui [Visi Singkat].</p>
-    </section>
+<!-- ═══════════ TENTANG ═══════════ -->
+<section id="tentang" class="section section--white">
+    <div class="container">
+        <div class="about-layout">
+            <div class="about__text reveal">
+                <span class="about__eyebrow">Tentang Kami</span>
+                <h2 class="about__title">Yayasan yang Lahir dari <em>Kepedulian</em></h2>
+                <div class="about__body">
+                    <p>Yayasan Trah Manshur adalah organisasi sosial, pendidikan, dan keagamaan yang berdedikasi untuk memberikan dampak positif bagi masyarakat luas. Kami percaya bahwa perubahan dimulai dari kepedulian yang nyata dan tindakan yang terukur.</p>
+                    <p>Dengan tim relawan yang bersemangat dan program yang dirancang secara cermat, kami hadir di garis terdepan pemberdayaan masyarakat — menjangkau mereka yang paling membutuhkan.</p>
+                </div>
+            </div>
+            <div class="about__visual reveal reveal-delay-2">
+                <div class="about__ring"></div>
+                <div class="about__img-wrap">
+                    <img src="image/foto1.jpeg" alt="Kegiatan Yayasan Trah Manshur" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<section id="program">
-        <h2>Program Unggulan Yayasan Tran Mahsur</h2>
+<!-- ═══════════ VIDEO PROFIL ═══════════ -->
+<section id="video-profil" class="section section--dark">
+    <div class="container">
+        <div class="sec-header reveal">
+            <span class="sec-eyebrow">Kondisi Lapangan</span>
+            <h2 class="sec-title">Urgensi <em>Misi Kami</em></h2>
+            <div class="sec-divider"></div>
+        </div>
+
+        <div class="video-slider">
+        <div class="video-slider-container">
+                <button class="slider-btn prev" id="slidePrev" aria-label="Sebelumnya">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+                </button>
+                <button class="slider-btn next" id="slideNext" aria-label="Berikutnya">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+
+                <div class="video-slider" id="videoSlider">
+   <div class="video-slider__track">
+                <div class="video-card">
+                    <div class="video-wrap">
+                        <iframe src="https://youtu.be/qf60KJDmAho?si=LThUnxf3bYkqES3z" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-caption">Deskripsi Video 1</p>
+                </div>
+                <div class="video-card">
+                    <div class="video-wrap">
+                        <iframe src="https://youtu.be/LDbUK9trMSY?si=QMk8_VQyKy0JXetO" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-caption">Deskripsi Video 2</p>
+                </div>
+                <div class="video-card">
+                    <div class="video-wrap">
+                        <iframe src="https://youtu.be/DxXKSx2XDOM?si=1Jrlau3hc2PmEy5L" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-caption">Deskripsi Video 3</p>
+                </div>
+            </div>
+                </div>
+             </div>
+           
+        </div>
         
-        <div class="program-container">
-            
-            <div class="program-item">
-                <div class="program-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&w=600&auto=format&fit=crop" alt="Foto Contoh Pendidikan" class="program-photo">
-                </div>
-                <div class="program-text">
-                    <h3>Beasiswa Pendidikan Mahsur</h3>
-                    <p>Program bantuan biaya pendidikan penuh untuk anak-anak berbakat dari keluarga prasejahtera.</p>
-                </div>
-            </div>
+        <p class="slider-hint">← Geser untuk melihat video lainnya →</p>
+    </div>
+</section>
 
-            <div class="program-item reverse"> <div class="program-image-wrapper">
-                    <img src="rubuk.png" alt="Foto Contoh Pemberdayaan" class="program-photo">
-                </div>
-                <div class="program-text">
-                    <h3>Pelatihan UMKM Desa</h3>
-                    <p>Pemberdayaan ekonomi melalui pelatihan keterampilan praktis dan pendampingan bisnis.</p>
-                </div>
-            </div>
-
-            <div class="program-item">
-                <div class="program-image-wrapper">
-                    <img src="image/rubuk.png" alt="Foto Contoh Sosial" class="program-photo">
-                </div>
-                <div class="program-text">
-                    <h3>Aksi Siaga Bencana</h3>
-                    <p>Tim relawan Yayasan Tran Mahsur siap sedia menyalurkan bantuan logistik di lokasi bencana.</p>
-                </div>
-            </div>
-
+<!-- ═══════════ GALERI ═══════════ -->
+<section id="galeri" class="section section--cream">
+    <div class="container">
+        <div class="sec-header reveal">
+            <span class="sec-eyebrow">Dokumentasi</span>
+            <h2 class="sec-title">Galeri <em>Kegiatan</em></h2>
+            <div class="sec-divider"></div>
+            <p class="sec-desc">Momen-momen aksi nyata relawan dan senyum para penerima manfaat Yayasan Trah Manshur.</p>
         </div>
-    </section>
+        <div class="galeri-grid reveal">
+            <div class="galeri-item" data-src="image/foto1.jpeg" data-caption="Dokumentasi Kegiatan 1">
+                <img src="image/foto1.jpeg" alt="Dokumentasi 1" loading="lazy">
+                <div class="galeri-item__zoom">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+                </div>
+            </div>
+            <div class="galeri-item" data-src="image/foto2.jpeg" data-caption="Dokumentasi Kegiatan 2">
+                <img src="image/foto2.jpeg" alt="Dokumentasi 2" loading="lazy">
+                <div class="galeri-item__zoom">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+                </div>
+            </div>
+            <div class="galeri-item" data-src="image/foto3.jpeg" data-caption="Dokumentasi Kegiatan 3">
+                <img src="image/foto3.jpeg" alt="Dokumentasi 3" loading="lazy">
+                <div class="galeri-item__zoom">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+                </div>
+            </div>
+            <div class="galeri-item" data-src="image/foto4.jpeg" data-caption="Dokumentasi Kegiatan 4">
+                <img src="image/foto4.jpeg" alt="Dokumentasi 4" loading="lazy">
+                <div class="galeri-item__zoom">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+                </div>
+            </div>
+            <div class="galeri-item" data-src="image/foto5.jpeg" data-caption="Dokumentasi Kegiatan 5">
+                <img src="image/foto5.jpeg" alt="Dokumentasi 5" loading="lazy">
+                <div class="galeri-item__zoom">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+                </div>
+            </div>
+            <div class="galeri-item" data-src="image/foto6.jpeg" data-caption="Dokumentasi Kegiatan 6">
+                <img src="image/foto6.jpeg" alt="Dokumentasi 6" loading="lazy">
+                <div class="galeri-item__zoom">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+                </div>
+            </div>
+            <div class="galeri-item" data-src="image/foto7.jpeg" data-caption="Dokumentasi Kegiatan 7">
+                <img src="image/foto7.jpeg" alt="Dokumentasi 7" loading="lazy">
+                <div class="galeri-item__zoom">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+                </div>
+            </div>
+            <div class="galeri-item" data-src="image/foto8.jpeg" data-caption="Dokumentasi Kegiatan 8">
+                <img src="image/foto8.jpeg" alt="Dokumentasi 8" loading="lazy">
+                <div class="galeri-item__zoom">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <section id="kontak">
-        <h2>Hubungi Kami</h2>
-        <p>Tertarik untuk berkolaborasi atau mendukung yayasan kami?</p>
-        <p>Email: info@tranmahsur.org | WhatsApp: +62 812-xxxx-xxxx</p>
-    </section>
+<!-- ═══════════ LIGHTBOX MODAL ═══════════ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto diperbesar">
+    <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
 
-    <footer>
-        <p>&copy; 2026 Yayasan Tran Mahsur. Semua Hak Dilindungi.</p>
-    </footer>
+    <button class="lightbox__close" id="lightboxClose" aria-label="Tutup">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M18 6 6 18M6 6l12 12"/>
+        </svg>
+    </button>
+
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Foto sebelumnya">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="m15 18-6-6 6-6"/>
+        </svg>
+    </button>
+
+    <div class="lightbox__stage">
+        <div class="lightbox__img-wrap" id="lightboxImgWrap">
+            <img class="lightbox__img" id="lightboxImg" src="" alt="">
+        </div>
+        <div class="lightbox__caption" id="lightboxCaption"></div>
+        <div class="lightbox__counter" id="lightboxCounter"></div>
+    </div>
+
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Foto berikutnya">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="m9 18 6-6-6-6"/>
+        </svg>
+    </button>
+</div>
+
+<!-- ═══════════ DOWNLOAD PDF ═══════════ -->
+
+<section id="download" class="download-section">
+    <div class="download-section__deco">PDF</div>
+    <div style="position:relative;z-index:2;max-width:1160px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem);">
+        <div class="sec-header reveal">
+            <span class="sec-eyebrow">Unduh Dokumen</span>
+            <h2 class="sec-title">Dokumen Resmi <em>Yayasan</em></h2>
+            <div class="sec-divider"></div>
+            <p class="sec-desc">Semua dokumen tersedia gratis, tanpa registrasi. Silakan bagikan kepada mitra, donatur, dan pemangku kepentingan.</p>
+        </div>
+        <div class="pdf-multi-grid reveal reveal-delay-1" id="pdfGrid">
+            <!-- Kartu dokumen diisi oleh JavaScript -->
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ KONTAK ═══════════ -->
+<section id="kontak" class="section section--white">
+    <div class="container">
+        <div class="kontak-layout">
+            <div class="reveal">
+                <span class="collab-pill">🤝 Mari Berkolaborasi</span>
+                <h2 class="kontak__title">Bersama Kita Bisa <em>Lebih Banyak</em></h2>
+                <p class="kontak__desc">Tertarik berkolaborasi, menjadi relawan, atau mendukung yayasan kami? Pintu kami selalu terbuka lebar untuk Anda yang ingin memberi dampak nyata.</p>
+                <div class="kontak__items">
+                    <div class="kontak__item">
+                        <div class="kontak__item-icon">✉️</div>
+                        <div>
+                            <div class="kontak__item-label">Email</div>
+                            <div class="kontak__item-value">Trahmanshur@gmail.com</div>
+                        </div>
+                    </div>
+                    <div class="kontak__item">
+                        <div class="kontak__item-icon">📱</div>
+                        <div>
+                            <div class="kontak__item-label">WhatsApp / Telepon</div>
+                            <div class="kontak__item-value">+62811-193-55</div>
+                            <div class="kontak__item-value">+62817-108-717</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="kontak__map reveal reveal-delay-2">
+                <div class="kontak__map-icon">🌿</div>
+                <div class="kontak__map-text">
+                    <strong>Yayasan Trah Manshur</strong>
+                    Hadir untuk memberikan dampak positif bagi masyarakat. Bergabunglah bersama kami dalam perjalanan memberi yang bermakna.
+                </div>
+                <a href="mailto:info@TrahManshur.org" class="btn-gold" style="margin-top:1rem; font-size:0.85rem; padding: 0.75rem 1.75rem;">
+                    Kirim Pesan
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+    <p>&copy; 2026 <strong>Yayasan Trah Manshur</strong> · Semua Hak Dilindungi · Dibuat dengan <span class="footer__gold">♥</span> untuk sesama</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
