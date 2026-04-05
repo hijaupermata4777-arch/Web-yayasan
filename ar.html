@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="يايسان ترين مهسور - مقترح رقمي لتمكين المجتمع وخدمته">
+    <title>يايسان ترين مهسور — المقترح الرقمي 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Arabic-optimised display + body fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ── Arabic (RTL) overrides ── */
+        body { font-family: 'Noto Naskh Arabic', 'DM Sans', system-ui, sans-serif; }
+
+        /* Nav lang — reverse order looks natural in RTL */
+        .nav__lang { margin-left: 0; margin-right: 1.5rem; padding-left: 0; padding-right: 1.5rem;
+                     border-left: none; border-right: 1px solid rgba(255,255,255,0.15); }
+
+        /* About eyebrow line on the right */
+        .about__eyebrow::before { display: none; }
+        .about__eyebrow::after  { content: ''; width: 28px; height: 1px; background: var(--green-400); }
+
+        /* Badge position flipped */
+        .about__badge { left: auto; right: -1.5rem; }
+        @media (max-width: 900px) { .about__badge { right: 0.5rem; left: auto; } }
+
+        /* Ring position flipped */
+        .about__ring { right: auto; left: -2rem; top: -2rem; }
+
+        /* Contact item hover direction */
+        .kontak__item:hover { transform: translateX(-6px); }
+
+        /* sec-eyebrow decorators */
+        .sec-eyebrow::before { display: none; }
+
+        /* PDF card note alignment */
+        .pdf-card__note { direction: rtl; }
+
+        /* Stat numbers stay LTR */
+        .stat-number { direction: ltr; unicode-bidi: embed; }
+
+        /* Hero title italic */
+        .hero__title em, .about__title em, .sec-title em,
+        .download-title em, .kontak__title em {
+            font-style: normal;
+            font-weight: 900;
+        }
+
+        /* Lightbox nav swap for RTL */
+        .lightbox__nav--prev { left: auto; right: 1.5rem; }
+        .lightbox__nav--next { right: auto; left: 1.5rem; }
+        @media (max-width: 640px) {
+            .lightbox__nav--prev { right: 0.5rem; left: auto; }
+            .lightbox__nav--next { left: 0.5rem; right: auto; }
+        }
+
+        /* Flip chevron icons for RTL navigation */
+        .lightbox__nav--prev svg { transform: scaleX(-1); }
+        .lightbox__nav--next svg { transform: scaleX(-1); }
+
+        /* Download meta */
+        .download-meta { flex-direction: row-reverse; }
+        .download-meta-item { flex-direction: row-reverse; }
+
+        /* Kontak items */
+        .kontak__item { flex-direction: row-reverse; text-align: right; }
+        .kontak__item-label, .kontak__item-value { text-align: right; }
+
+        /* Btn icon order */
+        .btn-gold svg, .btn-outline svg, .btn-pdf-download svg { order: 1; }
+
+        /* Hero actions on mobile */
+        @media (max-width: 640px) { .hero__actions { flex-direction: column; } }
+    </style>
+</head>
+<body>
+
+<!-- ═══════════ قائمة التنقل ═══════════ -->
+<nav class="nav" id="mainNav">
+    <div class="nav__logo">Tran <span>Mahsur</span></div>
+    <ul class="nav__links">
+        <li><a href="#about">من نحن</a></li>
+        <li><a href="#video-profile">الملف</a></li>
+        <li><a href="#gallery">المعرض</a></li>
+        <li><a href="#download">تنزيل</a></li>
+        <li><a href="#contact">تواصل</a></li>
+        <li class="nav__lang">
+            <a href="index.html">ID</a>
+            <span class="sep">·</span>
+            <a href="en.html">EN</a>
+            <span class="sep">·</span>
+            <a href="ar.html" class="active">AR</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- ═══════════ الصفحة الرئيسية ═══════════ -->
+<div class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__vignette"></div>
+    <div class="hero__line"></div>
+    <div class="hero__content">
+        <span class="hero__badge">المقترح الرقمي 2026</span>
+        <h1 class="hero__title">نبني مستقبلاً أفضل<br><em>مع ترين مهسور</em></h1>
+        <p class="hero__subtitle">مقترح لتمكين المجتمع وخدمته، بهدف إحداث أثر حقيقي لمن يحتاجون — مستدام، قابل للقياس، وذو معنى عميق.</p>
+        <div class="hero__actions">
+            <a href="#about" class="btn-gold">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+                اعرف أكثر
+            </a>
+            <a href="#download" class="btn-outline">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
+                تنزيل المقترح PDF
+            </a>
+        </div>
+    </div>
+    <div class="hero__scroll">
+        مرر
+        <div class="hero__scroll-line"></div>
+    </div>
+</div>
+
+<!-- ═══════════ من نحن ═══════════ -->
+<section id="about" class="section section--white">
+    <div class="container">
+        <div class="about-layout">
+            <div class="about__text reveal">
+                <span class="about__eyebrow">من نحن</span>
+                <h2 class="about__title">مؤسسة وُلدت من <em>الرحمة</em></h2>
+                <div class="about__body">
+                    <p>يايسان ترين مهسور منظمة اجتماعية وتعليمية ودينية مكرّسة لإحداث أثر إيجابي في المجتمع. نؤمن بأن التغيير يبدأ بالرعاية الحقيقية والعمل المدروس.</p>
+                    <p>بفريق متطوع متحمس وبرامج مصممة بعناية، نقف في طليعة تمكين المجتمع — لنصل إلى من يحتاجون أكثر من غيرهم.</p>
+                </div>
+            </div>
+            <div class="about__visual reveal reveal-delay-2">
+                <div class="about__ring"></div>
+                <div class="about__img-wrap">
+                    <img src="image/foto1.jpeg" alt="أنشطة يايسان ترين مهسور" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ فيديو الملف التعريفي ═══════════ -->
+<section id="video-profile" class="section section--dark">
+    <div class="container--narrow">
+        <div class="sec-header reveal">
+            <span class="sec-eyebrow">أوضاع الميدان</span>
+            <h2 class="sec-title">إلحاحية <em>مهمتنا</em></h2>
+            <div class="sec-divider"></div>
+            <p class="sec-desc">يُصوّر هذا الفيديو التحديات الكبرى التي يواجهها السكان جراء تأثير النفايات، وهو السبب الرئيسي لتأسيس مؤسستنا.</p>
+        </div>
+        <div class="video-wrap reveal reveal-delay-1">
+            <iframe src="https://www.youtube.com/embed/qf60KJDmAho"
+                title="فيديو تعريفي — يايسان ترين مهسور"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ معرض الصور ═══════════ -->
+<section id="gallery" class="section section--cream">
+    <div class="container">
+        <div class="sec-header reveal">
+            <span class="sec-eyebrow">توثيق</span>
+            <h2 class="sec-title">معرض <em>الأنشطة</em></h2>
+            <div class="sec-divider"></div>
+            <p class="sec-desc">لحظات العمل الميداني الحقيقي للمتطوعين وابتسامات المستفيدين من يايسان ترين مهسور.</p>
+        </div>
+        <div class="galeri-grid reveal">
+            <div class="galeri-item" data-src="image/foto1.jpeg" data-caption="توثيق النشاط 1">
+                <img src="image/foto1.jpeg" alt="توثيق 1" loading="lazy">
+                <div class="galeri-item__zoom">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+                </div>
+            </div>
+            <div class="galeri-item" data-src="image/foto2.jpeg" data-caption="توثيق النشاط 2">
+                <img src="image/foto2.jpeg" alt="توثيق 2" loading="lazy">
+                <div class="galeri-item__zoom">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+                </div>
+            </div>
+            <div class="galeri-item" data-src="image/foto3.jpeg" data-caption="توثيق النشاط 3">
+                <img src="image/foto3.jpeg" alt="توثيق 3" loading="lazy">
+                <div class="galeri-item__zoom">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+                </div>
+            </div>
+            <div class="galeri-item" data-src="image/foto4.jpeg" data-caption="توثيق النشاط 4">
+                <img src="image/foto4.jpeg" alt="توثيق 4" loading="lazy">
+                <div class="galeri-item__zoom">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+                </div>
+            </div>
+            <div class="galeri-item" data-src="image/foto5.jpeg" data-caption="توثيق النشاط 5">
+                <img src="image/foto5.jpeg" alt="توثيق 5" loading="lazy">
+                <div class="galeri-item__zoom">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+                </div>
+            </div>
+            <div class="galeri-item" data-src="image/foto6.jpeg" data-caption="توثيق النشاط 6">
+                <img src="image/foto6.jpeg" alt="توثيق 6" loading="lazy">
+                <div class="galeri-item__zoom">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+                </div>
+            </div>
+            <div class="galeri-item" data-src="image/foto7.jpeg" data-caption="توثيق النشاط 7">
+                <img src="image/foto7.jpeg" alt="توثيق 7" loading="lazy">
+                <div class="galeri-item__zoom">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+                </div>
+            </div>
+            <div class="galeri-item" data-src="image/foto8.jpeg" data-caption="توثيق النشاط 8">
+                <img src="image/foto8.jpeg" alt="توثيق 8" loading="lazy">
+                <div class="galeri-item__zoom">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ LIGHTBOX ═══════════ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="صورة مكبّرة">
+    <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
+    <button class="lightbox__close" id="lightboxClose" aria-label="إغلاق">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M18 6 6 18M6 6l12 12"/>
+        </svg>
+    </button>
+    <!-- In RTL: "prev" arrow is on the right side, "next" on the left -->
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="الصورة السابقة">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    <div class="lightbox__stage">
+        <div class="lightbox__img-wrap" id="lightboxImgWrap">
+            <img class="lightbox__img" id="lightboxImg" src="" alt="">
+        </div>
+        <div class="lightbox__caption" id="lightboxCaption"></div>
+        <div class="lightbox__counter" id="lightboxCounter"></div>
+    </div>
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="الصورة التالية">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
+</div>
+
+<!-- ═══════════ تنزيل PDF ═══════════ -->
+<section id="download" class="download-section">
+    <div class="download-section__deco">PDF</div>
+    <div style="position:relative;z-index:2;max-width:1160px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem);">
+        <div class="sec-header reveal">
+            <span class="sec-eyebrow">تنزيل الوثائق</span>
+            <h2 class="sec-title">الوثائق الرسمية <em>للمؤسسة</em></h2>
+            <div class="sec-divider"></div>
+            <p class="sec-desc">جميع الوثائق متاحة مجاناً وبدون تسجيل. يُرجى مشاركتها مع الشركاء والمانحين وأصحاب المصلحة.</p>
+        </div>
+        <div class="pdf-multi-grid reveal reveal-delay-1" id="pdfGrid">
+            <!-- تُضاف البطاقات عبر JavaScript -->
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ تواصل معنا ═══════════ -->
+<section id="contact" class="section section--white">
+    <div class="container">
+        <div class="kontak-layout">
+            <div class="reveal">
+                <span class="collab-pill">🤝 لنتعاون معاً</span>
+                <h2 class="kontak__title">معاً نستطيع <em>تحقيق المزيد</em></h2>
+                <p class="kontak__desc">هل أنت مهتم بالتعاون أو التطوع أو دعم مؤسستنا؟ أبوابنا مفتوحة دائماً لكل من يريد إحداث فرق حقيقي.</p>
+                <div class="kontak__items">
+                    <div class="kontak__item">
+                        <div class="kontak__item-icon">✉️</div>
+                        <div>
+                            <div class="kontak__item-label">البريد الإلكتروني</div>
+                            <div class="kontak__item-value">Trahmanshur@gmail.com</div>
+                        </div>
+                    </div>
+                    <div class="kontak__item">
+                        <div class="kontak__item-icon">📱</div>
+                        <div>
+                            <div class="kontak__item-label">واتساب / هاتف</div>
+                            <div class="kontak__item-value">+62 811-1193-55</div>
+                            <div class="kontak__item-value">+62 817-1087-17</div>
+                            <div class="kontak__item-value">+62 899-4641-111</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="kontak__map reveal reveal-delay-2">
+                <div class="kontak__map-icon">🌿</div>
+                <div class="kontak__map-text">
+                    <strong>يايسان ترين مهسور</strong>
+                    هنا لإحداث أثر إيجابي في المجتمع. انضم إلينا في رحلة العطاء الهادفة.
+                </div>
+                <a href="mailto:info@tranmahsur.org" class="btn-gold" style="margin-top:1rem; font-size:0.85rem; padding: 0.75rem 1.75rem;">
+                    أرسل رسالة
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ تذييل الصفحة ═══════════ -->
+<footer class="footer">
+    <p>© 2026 <strong>يايسان ترين مهسور</strong> · جميع الحقوق محفوظة · صُنع بـ<span class="footer__gold">♥</span> من أجل الآخرين</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
