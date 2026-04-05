@@ -1,3 +1,8 @@
+/* ================================================================
+   DESIGN SYSTEM — TRAN MAHSUR 2026
+   Aesthetic: Luxury Editorial · Deep Forest Green + Gold
+================================================================ */
+
 :root {
     --green-950: #071a10;
     --green-900: #0b2e1b;
@@ -130,8 +135,11 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
     inset: 0;
     background: url('image/utama.jpeg') center/cover no-repeat;
     filter: brightness(0.4) saturate(0.7);
-    transform: scale(1.05);
+    transform: scale(1.05) translateZ(0);
     animation: heroZoom 18s ease-in-out infinite alternate;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 @keyframes heroZoom {
     from { transform: scale(1.05); }
@@ -1009,6 +1017,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
     .about__stats { grid-template-columns: 1fr 1fr; }
     .galeri-grid  { grid-template-columns: repeat(2, 1fr); }
     .hero__actions { flex-direction: column; }
+    .hero__bg { animation: none; }
 }
 @media (max-width: 420px) {
     .about__stats { grid-template-columns: 1fr; }
