@@ -67,28 +67,28 @@
         }, 120);
         setTimeout(function () { lbImgWrap.classList.remove('swapping'); isAnimating = false; }, 260);
     }
-    galeriItems.forEach(function (item, i) { item.addEventListener('click', function () { openLightbox(i); }); });
-    lbClose.addEventListener('click', closeLightbox);
-    lbBackdrop.addEventListener('click', closeLightbox);
-    lbPrev.addEventListener('click', function () { goTo(currentIndex - 1); });
-    lbNext.addEventListener('click', function () { goTo(currentIndex + 1); });
-    document.addEventListener('keydown', function (e) {
-        if (!lightbox.classList.contains('open')) return;
-        if (e.key === 'Escape') closeLightbox();
-        if (e.key === 'ArrowLeft') goTo(currentIndex - 1);
-        if (e.key === 'ArrowRight') goTo(currentIndex + 1);
-    });
-    var touchStartX = 0, touchEndX = 0;
-    lightbox.addEventListener('touchstart', function (e) { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
-    lightbox.addEventListener('touchend', function (e) {
-        touchEndX = e.changedTouches[0].screenX;
-        var diff = touchStartX - touchEndX;
-        if (Math.abs(diff) >= 50) { if (diff > 0) goTo(currentIndex + 1); else goTo(currentIndex - 1); }
-    }, { passive: true });
+    if (lightbox) {
+        galeriItems.forEach(function (item, i) { item.addEventListener('click', function () { openLightbox(i); }); });
+        lbClose.addEventListener('click', closeLightbox);
+        lbBackdrop.addEventListener('click', closeLightbox);
+        lbPrev.addEventListener('click', function () { goTo(currentIndex - 1); });
+        lbNext.addEventListener('click', function () { goTo(currentIndex + 1); });
+        document.addEventListener('keydown', function (e) {
+            if (!lightbox.classList.contains('open')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') goTo(currentIndex - 1);
+            if (e.key === 'ArrowRight') goTo(currentIndex + 1);
+        });
+        var touchStartX = 0, touchEndX = 0;
+        lightbox.addEventListener('touchstart', function (e) { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+        lightbox.addEventListener('touchend', function (e) {
+            touchEndX = e.changedTouches[0].screenX;
+            var diff = touchStartX - touchEndX;
+            if (Math.abs(diff) >= 50) { if (diff > 0) goTo(currentIndex + 1); else goTo(currentIndex - 1); }
+        }, { passive: true });
+    }
 
     /* ══════════ 4. MULTI-PDF DOWNLOAD ══════════ */
-
-    // ── Daftar dokumen — tambah/hapus sesuai kebutuhan ──
     var PDF_DOCS = [
         {
             name: 'rencana layanan 3 desa (Cinangka, bj jengkol, Tegalwaru)',
@@ -128,7 +128,7 @@
                 '</div>' +
                 '<div>' +
                     '<div class="pdf-item-card__name">' + doc.name + '</div>' +
-                    '<div class="pdf-item-card__meta">' + doc.meta + '</div>' +
+                    '<div class="pdf-item-card__meta">' + (doc.meta || '') + '</div>' +
                 '</div>' +
                 '<div class="pdf-item-card__progress" id="prog-' + i + '">' +
                     '<div class="pdf-item-card__progress-bar" id="bar-' + i + '"></div>' +
@@ -146,7 +146,6 @@
             });
         });
 
-        // Observe kartu yang baru dibuat
         if ('IntersectionObserver' in window) {
             grid.querySelectorAll('.reveal').forEach(function (el) { revealObs.observe(el); });
         } else {
@@ -187,29 +186,61 @@
         }, 1600);
     }
 
+    /* ══════════ 5. VIDEO SLIDER — halaman ID/EN (id="videoSlider") ══════════ */
+    var slider  = document.getElementById('videoSlider');
+    var btnPrev = document.getElementById('slidePrev');
+    var btnNext = document.getElementById('slideNext');
+
+    /* PERBAIKAN UTAMA: cek null dulu sebelum pakai — 
+       kalau null (halaman Arab), skip blok ini dan tidak crash */
+    if (slider && btnPrev && btnNext) {
+        btnNext.addEventListener('click', function () {
+            var cardWidth = slider.querySelector('.video-card').offsetWidth + 20;
+            slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        });
+
+        btnPrev.addEventListener('click', function () {
+            var cardWidth = slider.querySelector('.video-card').offsetWidth + 20;
+            slider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+        });
+
+        slider.addEventListener('scroll', function () {
+            var scrollLeft = slider.scrollLeft;
+            var maxScroll  = slider.scrollWidth - slider.clientWidth;
+            btnPrev.style.opacity = scrollLeft <= 0             ? '0.3' : '1';
+            btnNext.style.opacity = scrollLeft >= maxScroll - 5 ? '0.3' : '1';
+        }, { passive: true });
+
+        btnPrev.style.opacity = '0.3';
+    }
+
+    /* ══════════ 6. VIDEO SLIDER — halaman AR (id="videoSliderAr") ══════════ */
+    var sliderAr  = document.getElementById('videoSliderAr');
+    var btnPrevAr = document.getElementById('slidePrevAr');
+    var btnNextAr = document.getElementById('slideNextAr');
+
+    if (sliderAr && btnPrevAr && btnNextAr) {
+        function getCardWidthAr() {
+            var card = sliderAr.querySelector('.video-card');
+            return card ? card.offsetWidth + 20 : 320;
+        }
+
+        btnNextAr.addEventListener('click', function () {
+            sliderAr.scrollBy({ left: getCardWidthAr(), behavior: 'smooth' });
+        });
+
+        btnPrevAr.addEventListener('click', function () {
+            sliderAr.scrollBy({ left: -getCardWidthAr(), behavior: 'smooth' });
+        });
+
+        sliderAr.addEventListener('scroll', function () {
+            var scrollLeft = sliderAr.scrollLeft;
+            var maxScroll  = sliderAr.scrollWidth - sliderAr.clientWidth;
+            btnPrevAr.style.opacity = scrollLeft <= 0             ? '0.3' : '1';
+            btnNextAr.style.opacity = scrollLeft >= maxScroll - 5 ? '0.3' : '1';
+        }, { passive: true });
+
+        btnPrevAr.style.opacity = '0.3';
+    }
+
 })();
-
-const slider = document.getElementById('videoSlider');
-const btnPrev = document.getElementById('slidePrev');
-const btnNext = document.getElementById('slideNext');
-
-// Fungsi untuk geser ke kanan
-btnNext.addEventListener('click', () => {
-    const cardWidth = slider.querySelector('.video-card').offsetWidth + 20; // lebar video + gap
-    slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
-});
-
-// Fungsi untuk geser ke kiri
-btnPrev.addEventListener('click', () => {
-    const cardWidth = slider.querySelector('.video-card').offsetWidth + 20;
-    slider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-});
-
-// Opsional: Sembunyikan tombol jika sudah mentok (UX lebih baik)
-slider.addEventListener('scroll', () => {
-    const scrollLeft = slider.scrollLeft;
-    const maxScroll = slider.scrollWidth - slider.clientWidth;
-
-    btnPrev.style.opacity = scrollLeft <= 0 ? '0.3' : '1';
-    btnNext.style.opacity = scrollLeft >= maxScroll - 5 ? '0.3' : '1';
-});
