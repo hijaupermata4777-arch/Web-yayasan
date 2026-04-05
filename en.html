@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yayasan Trah Manshur - Digital Proposal for Community Empowerment and Service">
-    <title>Yayasan Trah Manshur — Digital Proposal 2026</title>
+    <meta name="description" content="Trah Manshur Foundation - Digital Proposal for Community Empowerment and Service">
+    <title>Trah Manshur Foundation — Digital Proposal 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -12,15 +12,14 @@
 </head>
 <body>
 
-<!-- ═══════════ NAVIGATION ═══════════ -->
 <nav class="nav" id="mainNav">
     <div class="nav__logo">Trah <span>Manshur</span></div>
     <ul class="nav__links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#video-profile">Profile</a></li>
-        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#tentang">About</a></li>
+        <li><a href="#video-profil">Profile</a></li>
+        <li><a href="#galeri">Gallery</a></li>
         <li><a href="#download">Download</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#kontak">Contact</a></li>
         <li class="nav__lang">
             <a href="index.html">ID</a>
             <span class="sep">·</span>
@@ -31,17 +30,16 @@
     </ul>
 </nav>
 
-<!-- ═══════════ HERO ═══════════ -->
 <div class="hero">
     <div class="hero__bg"></div>
     <div class="hero__vignette"></div>
     <div class="hero__line"></div>
     <div class="hero__content">
         <span class="hero__badge">Digital Proposal 2026</span>
-        <h1 class="hero__title">Building a Better Future<br><em>With Trah Manshur</em></h1>
-        <p class="hero__subtitle">A Community Empowerment and Service Proposal to create real impact for those in need — sustainable, measurable, and deeply meaningful.</p>
+        <h1 class="hero__title">Building the Future<br><em>With Trah Manshur</em></h1>
+        <p class="hero__subtitle">Community Empowerment and Service Proposal to create a real impact for others — sustainable, measurable, and meaningful.</p>
         <div class="hero__actions">
-            <a href="#about" class="btn-gold">
+            <a href="#tentang" class="btn-gold">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
                 Learn More
             </a>
@@ -57,16 +55,15 @@
     </div>
 </div>
 
-<!-- ═══════════ ABOUT ═══════════ -->
-<section id="about" class="section section--white">
+<section id="tentang" class="section section--white">
     <div class="container">
         <div class="about-layout">
             <div class="about__text reveal">
                 <span class="about__eyebrow">About Us</span>
                 <h2 class="about__title">A Foundation Born from <em>Compassion</em></h2>
                 <div class="about__body">
-                    <p>Yayasan Trah Manshur is a social, educational, and religious organization dedicated to creating a positive impact for communities at large. We believe that change begins with genuine care and measured action.</p>
-                    <p>With an enthusiastic team of volunteers and carefully designed programs, we stand at the forefront of community empowerment — reaching those who need it most.</p>
+                    <p>Trah Manshur Foundation is a social, educational, and religious organization dedicated to providing a positive impact on the community. We believe that change starts with genuine care and measurable action.</p>
+                    <p>With a passionate team of volunteers and carefully designed programs, we are at the forefront of community empowerment — reaching those who need it most.</p>
                 </div>
             </div>
             <div class="about__visual reveal reveal-delay-2">
@@ -79,32 +76,63 @@
     </div>
 </section>
 
-<!-- ═══════════ VIDEO PROFILE ═══════════ -->
-<section id="video-profile" class="section section--dark">
-    <div class="container--narrow">
+<section id="video-profil" class="section section--dark">
+    <div class="container">
         <div class="sec-header reveal">
             <span class="sec-eyebrow">Field Conditions</span>
             <h2 class="sec-title">The Urgency of <em>Our Mission</em></h2>
             <div class="sec-divider"></div>
-            <p class="sec-desc">This video illustrates the major challenges faced by residents regarding the impact of waste pollution — the primary reason our foundation was established.</p>
         </div>
-        <div class="video-wrap reveal reveal-delay-1">
-            <iframe src="https://www.youtube.com/embed/qf60KJDmAho"
-                title="Trah Manshur Foundation Profile Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen loading="lazy"></iframe>
+
+        <div class="video-slider">
+            <div class="video-slider-container">
+                <button class="slider-btn prev" id="slidePrev" aria-label="Previous">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+                </button>
+                <button class="slider-btn next" id="slideNext" aria-label="Next">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+
+                <div class="video-slider" id="videoSlider">
+                    <div class="video-slider__track">
+                        <div class="video-card">
+                            <div class="video-wrap">
+                                <iframe src="https://www.youtube.com/embed/qf60KJDmAho"
+                                    title="Trah Manshur Foundation Profile Video"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="video-card">
+                            <div class="video-wrap">
+                                <iframe src="https://www.youtube.com/embed/LDbUK9trMSY"
+                                    title="Trah Manshur Foundation - Activity 2"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="video-card">
+                            <div class="video-wrap">
+                                <iframe src="https://www.youtube.com/embed/DxXKSx2XDOM"
+                                    title="Trah Manshur Foundation - Activity 3"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen loading="lazy"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- ═══════════ GALLERY ═══════════ -->
-<section id="gallery" class="section section--cream">
+<section id="galeri" class="section section--cream">
     <div class="container">
         <div class="sec-header reveal">
             <span class="sec-eyebrow">Documentation</span>
             <h2 class="sec-title">Activity <em>Gallery</em></h2>
             <div class="sec-divider"></div>
-            <p class="sec-desc">Moments of real action by our volunteers and the smiles of those benefited by Yayasan Trah Manshur.</p>
+            <p class="sec-desc">Moments of real action by volunteers and the smiles of the beneficiaries of Trah Manshur Foundation.</p>
         </div>
         <div class="galeri-grid reveal">
             <div class="galeri-item" data-src="image/foto1.jpeg" data-caption="Activity Documentation 1">
@@ -119,7 +147,7 @@
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
                 </div>
             </div>
-            <div class="galeri-item" data-src="image/foto3.jpeg" data-caption="Activity Documentation 3">
+             <div class="galeri-item" data-src="image/foto3.jpeg" data-caption="Activity Documentation 3">
                 <img src="image/foto3.jpeg" alt="Documentation 3" loading="lazy">
                 <div class="galeri-item__zoom">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
@@ -131,25 +159,25 @@
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
                 </div>
             </div>
-            <div class="galeri-item" data-src="image/foto5.jpeg" data-caption="Activity Documentation 5">
+            <div class="galeri-item" data-src="image/foto4.jpeg" data-caption="Activity Documentation 4">
                 <img src="image/foto5.jpeg" alt="Documentation 5" loading="lazy">
                 <div class="galeri-item__zoom">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
                 </div>
             </div>
-            <div class="galeri-item" data-src="image/foto6.jpeg" data-caption="Activity Documentation 6">
-                <img src="image/foto6.jpeg" alt="Documentation 6" loading="lazy">
-                <div class="galeri-item__zoom">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
-                </div>
+            <div class="galeri-item" data-src="image/foto4.jpeg" data-caption="Activity Documentation 4">
+                    <img src="image/foto6.jpeg" alt="Documentation 6" loading="lazy">
+                    <div class="galeri-item__zoom">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+                    </div>
             </div>
-            <div class="galeri-item" data-src="image/foto7.jpeg" data-caption="Activity Documentation 7">
+            <div class="galeri-item" data-src="image/foto4.jpeg" data-caption="Activity Documentation 4">
                 <img src="image/foto7.jpeg" alt="Documentation 7" loading="lazy">
                 <div class="galeri-item__zoom">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
                 </div>
             </div>
-            <div class="galeri-item" data-src="image/foto8.jpeg" data-caption="Activity Documentation 8">
+            <div class="galeri-item" data-src="image/foto4.jpeg" data-caption="Activity Documentation 4">
                 <img src="image/foto8.jpeg" alt="Documentation 8" loading="lazy">
                 <div class="galeri-item__zoom">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
@@ -159,15 +187,12 @@
     </div>
 </section>
 
-<!-- ═══════════ LIGHTBOX MODAL ═══════════ -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged photo">
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged image">
     <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
     <button class="lightbox__close" id="lightboxClose" aria-label="Close">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path d="M18 6 6 18M6 6l12 12"/>
-        </svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
     </button>
-    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Previous photo">
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Previous image">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
     </button>
     <div class="lightbox__stage">
@@ -177,44 +202,39 @@
         <div class="lightbox__caption" id="lightboxCaption"></div>
         <div class="lightbox__counter" id="lightboxCounter"></div>
     </div>
-    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next photo">
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next image">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
     </button>
 </div>
 
-<!-- ═══════════ DOWNLOAD PDF ═══════════ -->
 <section id="download" class="download-section">
     <div class="download-section__deco">PDF</div>
     <div style="position:relative;z-index:2;max-width:1160px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem);">
         <div class="sec-header reveal">
             <span class="sec-eyebrow">Download Documents</span>
-            <h2 class="sec-title">Official <em>Foundation Documents</em></h2>
+            <h2 class="sec-title">Official Foundation <em>Documents</em></h2>
             <div class="sec-divider"></div>
-            <p class="sec-desc">All documents are available free of charge, with no registration required. Feel free to share with partners, donors, and stakeholders.</p>
+            <p class="sec-desc">All documents are available for free, no registration required. Please share with partners, donors, and stakeholders.</p>
         </div>
-        <div class="pdf-multi-grid reveal reveal-delay-1" id="pdfGrid">
-        </div>
+        <div class="pdf-multi-grid reveal reveal-delay-1" id="pdfGrid"></div>
     </div>
 </section>
 
-<!-- ═══════════ CONTACT ═══════════ -->
-<section id="contact" class="section section--white">
+<section id="kontak" class="section section--white">
     <div class="container">
         <div class="kontak-layout">
             <div class="reveal">
                 <span class="collab-pill">🤝 Let's Collaborate</span>
-                <h2 class="kontak__title">Together We Can Do <em>So Much More</em></h2>
-                <p class="kontak__desc">Interested in collaborating, volunteering, or supporting our foundation? Our doors are always wide open for those who want to make a real difference.</p>
+                <h2 class="kontak__title">Together We Can Do <em>More</em></h2>
+                <p class="kontak__desc">Interested in collaborating, volunteering, or supporting our foundation? Our doors are always open for those who want to make a real impact.</p>
                 <div class="kontak__items">
                     <div class="kontak__item">
-                        <div class="kontak__item-icon">✉️</div>
                         <div>
                             <div class="kontak__item-label">Email</div>
                             <div class="kontak__item-value">Trahmanshur@gmail.com</div>
                         </div>
                     </div>
                     <div class="kontak__item">
-                        <div class="kontak__item-icon">📱</div>
                         <div>
                             <div class="kontak__item-label">WhatsApp / Phone</div>
                             <div class="kontak__item-value">+62 811-1193-55</div>
@@ -222,25 +242,30 @@
                             <div class="kontak__item-value">+62 899-4641-111</div>
                         </div>
                     </div>
+                    <div class="kontak__item">
+                        <div>
+                            <div class="kontak__item-label">Bank Account</div>
+                            <div class="kontak__item-value">-</div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="kontak__map reveal reveal-delay-2">
                 <div class="kontak__map-icon">🌿</div>
                 <div class="kontak__map-text">
-                    <strong>Yayasan Trah Manshur</strong>
-                    Here to create a positive impact for communities. Join us on a journey of meaningful giving.
+                    <strong>Trah Manshur Foundation</strong>
+                    Here to provide a positive impact for the community. Join us in this meaningful journey of giving.
                 </div>
-                <a href="mailto:info@TrahManshur.org" class="btn-gold" style="margin-top:1rem; font-size:0.85rem; padding: 0.75rem 1.75rem;">
-                    Send a Message
+                <a href="mailto:Trahmanshur@gmail.com" class="btn-gold" style="margin-top:1rem; font-size:0.85rem; padding: 0.75rem 1.75rem;">
+                    Send Message
                 </a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ═══════════ FOOTER ═══════════ -->
 <footer class="footer">
-    <p>&copy; 2026 <strong>Yayasan Trah Manshur</strong> · All Rights Reserved · Made with <span class="footer__gold">♥</span> for others</p>
+    <p>&copy; 2026 <strong>Trah Manshur Foundation</strong> · All Rights Reserved · Made with <span class="footer__gold">♥</span> for others</p>
 </footer>
 
 <script src="script.js"></script>
