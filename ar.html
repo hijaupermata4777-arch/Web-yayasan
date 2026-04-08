@@ -12,6 +12,41 @@
     <style>
         body { font-family: 'DM Sans', sans-serif; }
         h1, h2, .nav__logo { font-family: 'Playfair Display', serif; }
+
+        /* Fix: tombol slider untuk halaman RTL — posisi TIDAK dibalik */
+        .ar-slider-wrapper {
+            position: relative;
+            width: 100%;
+        }
+        .ar-slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.9);
+            color: #000;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .ar-slider-btn:hover {
+            background: #fff;
+            transform: translateY(-50%) scale(1.1);
+        }
+        /* في RTL: زر "السابق" يجب أن يكون على اليمين لأن الاتجاه معكوس */
+        .ar-slider-btn.ar-prev { right: -10px; }
+        .ar-slider-btn.ar-next { left: -10px; }
+
+        @media (max-width: 480px) {
+            .ar-slider-btn { display: none; }
+        }
     </style>
 </head>
 <body>
@@ -64,10 +99,11 @@
         <div class="about-layout">
             <div class="about__text reveal">
                 <span class="about__eyebrow">من نحن</span>
-                <h2 class="about__title">مؤسسة ولدت من رحم <em>الاهتمام</em></h2>
+                <h2 class="about__title">تبرعك يمكن أن <em>يغير حياة</em></h2>
                 <div class="about__body">
-                    <p>مؤسسة تراه منصور هي منظمة اجتماعية وتعليمية ودينية مكرسة لتقديم تأثير إيجابي للمجتمع ككل. نحن نؤمن بأن التغيير يبدأ باهتمام حقيقي وعمل ملموس.</p>
-                    <p>بفضل فريقنا المتفاني من المتطوعين والبرامج المصممة بعناية، نحن في طليعة تمكين المجتمع — نصل إلى أولئك الذين هم في أمس الحاجة إليها.</p>
+                    <p>في القرى النائية — بعيدة عن المرافق اللائقة، بعيدة عن الاهتمام — لا يزال كثير من إخواننا يكافحون فقط للحصول على مياه نظيفة وتعليم أساسي وأمل. <strong>مؤسسة تراه منصور موجودة لتكون الجسر بين تعاطفك وأولئك الذين يحتاجون إليه أكثر من غيرهم.</strong></p>
+                    <p>هذه ليست مجرد مساعدة لحظية. نحن نبني برامج مستدامة في المجالات الاجتماعية والتعليمية والدينية — قابلة للقياس وشفافة وذات تأثير حقيقي. مع مئات المستفيدين عبر 3 قرى، نُثبت أن <em>التعاطف الجماعي يمكنه قيادة تغيير هائل.</em></p>
+                    <p>انضم إلينا. تبرع. كن جزءاً من قصة التغيير هذه — لأن فعلاً واحداً منك اليوم يمكن أن يكون نوراً لكثير من الأسر غداً.</p>
                 </div>
             </div>
             <div class="about__visual reveal reveal-delay-2">
@@ -88,12 +124,18 @@
             <div class="sec-divider"></div>
         </div>
 
-        <div class="video-slider-container">
-            <button class="slider-btn prev" id="slidePrevAr" aria-label="السابق">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
-            </button>
-            <button class="slider-btn next" id="slideNextAr" aria-label="التالي">
+        <!-- 
+            FIX: Wrapper khusus AR agar tombol tidak ikut RTL flip.
+            Slider konten tetap dir="ltr" supaya scroll YouTube normal.
+        -->
+        <div class="ar-slider-wrapper">
+            <!-- زر السابق: في RTL يجب أن يكون على اليمين -->
+            <button class="ar-slider-btn ar-prev" id="slidePrevAr" aria-label="السابق">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <!-- زر التالي: في RTL يجب أن يكون على اليسار -->
+            <button class="ar-slider-btn ar-next" id="slideNextAr" aria-label="التالي">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
             </button>
 
             <div class="video-slider" id="videoSliderAr" dir="ltr">
@@ -137,7 +179,21 @@
             <div class="sec-divider"></div>
             <p class="sec-desc">لحظات من العمل الفعلي للمتطوعين وابتسامات المستفيدين من مؤسسة تراه منصور.</p>
         </div>
-        <div class="galeri-grid reveal">
+
+        <!-- TAB TOGGLE -->
+        <div class="galeri-tabs reveal">
+            <button class="galeri-tab active" data-tab="foto">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                الصور
+            </button>
+            <button class="galeri-tab" data-tab="video">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                الفيديوهات
+            </button>
+        </div>
+
+        <!-- PHOTO GRID -->
+        <div class="galeri-grid reveal" id="galeriPhoto">
             <div class="galeri-item" data-src="image/foto1.jpeg" data-caption="توثيق النشاط 1">
                 <img src="image/foto1.jpeg" alt="توثيق 1" loading="lazy">
                 <div class="galeri-item__zoom">
@@ -187,10 +243,56 @@
                 </div>
             </div>
         </div>
+
+        <!-- VIDEO GRID -->
+        <div class="galeri-video-grid" id="galeriVideo" style="display:none;">
+    <div class="galeri-video-card reveal">
+        <div class="galeri-video-card__label-bar">
+            <span class="galeri-video-card__num">٠١</span>
+            <span class="galeri-video-card__tag">📹 الأنشطة</span>
+        </div>
+        <div class="video-wrap">
+            <video width="640" height="360" controls>
+                <source src="video/v1.mp4" type="video/mp4">
+                <source src="video/v1.webm" type="video/webm">
+            </video>
+        </div>
+        <div class="galeri-video-card__footer">
+            <div class="galeri-video-card__info">
+                <strong>توثيق الأنشطة الاجتماعية</strong>
+                <span>يايسان تراه مانشور — ٢٠٢٦</span>
+            </div>
+            <div class="galeri-video-card__play-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+        </div>
+    </div>
+    <div class="galeri-video-card reveal reveal-delay-1">
+        <div class="galeri-video-card__label-bar">
+            <span class="galeri-video-card__num">٠٢</span>
+            <span class="galeri-video-card__tag">📹 الأنشطة</span>
+        </div>
+        <div class="video-wrap">
+            <video width="640" height="360" controls>
+                <source src="video/v2.mp4" type="video/mp4">
+                <source src="video/v2.webm" type="video/webm">
+            </video>
+        </div>
+        <div class="galeri-video-card__footer">
+            <div class="galeri-video-card__info">
+                <strong>نشاط خدمة المجتمع</strong>
+                <span>يايسان تراه مانشور — ٢٠٢٦</span>
+            </div>
+            <div class="galeri-video-card__play-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+        </div>
+    </div>
+</div>
     </div>
 </section>
 
-<!-- ═══════════ LIGHTBOX MODAL — WAJIB ADA di setiap halaman ═══════════ -->
+<!-- ═══════════ LIGHTBOX MODAL ═══════════ -->
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="صورة مكبرة">
     <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
 
@@ -259,7 +361,7 @@
                     <div class="kontak__item">
                         <div>
                             <div class="kontak__item-label">رقم الحساب البنكي</div>
-                            <div class="kontak__item-value" dir="ltr">-</div>
+                            <div class="kontak__item-value" dir="ltr">BJB KCP BOJONG GEDE: 0104330398100</div>
                         </div>
                     </div>
                 </div>
