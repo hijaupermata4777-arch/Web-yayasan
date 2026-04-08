@@ -1,3 +1,4 @@
+
 :root {
     --green-950: #071a10;
     --green-900: #0b2e1b;
@@ -290,6 +291,46 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
     transform: translateY(-3px);
 }
 
+/* ── About CTA Buttons ── */
+.about__cta-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+.btn-about-donate {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.9rem 2rem;
+    background: linear-gradient(135deg, var(--green-600), var(--green-400));
+    color: var(--white);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(39,146,79,0.35);
+    transition: transform 0.3s var(--ease-expo), box-shadow 0.3s ease;
+}
+.btn-about-donate:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(39,146,79,0.5);
+}
+.btn-about-donate svg { flex-shrink: 0; fill: rgba(255,255,255,0.25); }
+.btn-about-proposal {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--green-600);
+    border-bottom: 1.5px solid var(--green-300);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+}
+.btn-about-proposal:hover {
+    color: var(--green-500);
+    border-color: var(--green-500);
+}
+
 /* ================================================================
    SECTION BASE
 ================================================================ */
@@ -400,9 +441,10 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
     font-size: 1rem;
     line-height: 1.85;
     color: var(--ink-500);
-    margin-bottom: 2.5rem;
+    margin-bottom: 0.5rem;
 }
 .about__body p + p { margin-top: 1em; }
+.about__body strong { color: var(--green-800); }
 
 .about__stats {
     display: grid;
@@ -526,7 +568,47 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .video-wrap iframe { width: 100%; height: 100%; border: 0; }
 
 /* ================================================================
-   GALERI
+   GALERI TABS
+================================================================ */
+.galeri-tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+    background: var(--ink-100);
+    border-radius: 10px;
+    padding: 0.35rem;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+.galeri-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.4rem;
+    border-radius: 7px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ink-500);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+    letter-spacing: 0.02em;
+}
+.galeri-tab svg { transition: stroke 0.25s; }
+.galeri-tab.active {
+    background: var(--white);
+    color: var(--green-700);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+.galeri-tab.active svg { stroke: var(--green-600); }
+.galeri-tab:hover:not(.active) { color: var(--ink-700); }
+
+/* ================================================================
+   GALERI FOTO GRID
 ================================================================ */
 .galeri-grid {
     display: grid;
@@ -569,6 +651,34 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 .galeri-item:hover .galeri-item__zoom { opacity: 1; }
 .galeri-item__zoom svg { filter: drop-shadow(0 2px 8px rgba(0,0,0,0.6)); }
+
+/* ================================================================
+   GALERI VIDEO GRID
+================================================================ */
+.galeri-video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 0.5rem;
+}
+.galeri-video-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+.galeri-video-card .video-wrap {
+    max-width: 100%;
+    box-shadow: 0 16px 48px rgba(7,26,16,0.12);
+    border-radius: 12px;
+    overflow: hidden;
+}
+.galeri-video-caption {
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--ink-500);
+    letter-spacing: 0.02em;
+}
 
 /* ================================================================
    LIGHTBOX
@@ -621,7 +731,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
     from { transform: scale(0.82); opacity: 0; }
     to   { transform: scale(1);    opacity: 1; }
 }
-/* Fade-swap animation class */
 .lightbox__img-wrap.swapping {
     animation: lbSwap 0.25s ease forwards;
 }
@@ -663,7 +772,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
     text-align: center;
 }
 
-/* Close button */
 .lightbox__close {
     position: absolute;
     top: 1.25rem;
@@ -686,7 +794,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
     transform: rotate(90deg);
 }
 
-/* Prev / Next navigation buttons */
 .lightbox__nav {
     position: absolute;
     top: 50%;
@@ -717,7 +824,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .lightbox__nav--prev:hover { transform: translateY(-50%) translateX(-3px); }
 .lightbox__nav--next:hover { transform: translateY(-50%) translateX(3px); }
 
-/* Touch swipe indicator hint on mobile */
 @media (max-width: 640px) {
     .lightbox__stage {
         max-width: calc(100vw - 2rem);
@@ -727,7 +833,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
     .lightbox__nav--next { right: 0.5rem; width: 42px; height: 42px; }
 }
 
-/* Gold accent bar on top of lightbox image */
 .lightbox__img-wrap::before {
     content: '';
     position: absolute;
@@ -770,262 +875,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
     pointer-events: none;
     user-select: none;
 }
-.download-inner {
-    position: relative;
-    z-index: 2;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 3rem;
-    align-items: center;
-    max-width: 1160px;
-    margin: 0 auto;
-    padding: 0 clamp(1.25rem, 4vw, 3rem);
-}
-.download-text .sec-eyebrow { color: var(--gold-300); }
-.download-text .sec-eyebrow::before,
-.download-text .sec-eyebrow::after { background: var(--gold-300); }
-.download-title {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 700;
-    color: var(--white);
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-    margin: 1rem 0 1.25rem;
-}
-.download-title em { font-style: italic; color: var(--gold-300); }
-.download-desc {
-    font-size: 1rem;
-    line-height: 1.75;
-    color: rgba(255,255,255,0.55);
-    max-width: 500px;
-}
-.download-meta {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    margin-top: 2rem;
-    flex-wrap: wrap;
-}
-.download-meta-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.82rem;
-    color: rgba(255,255,255,0.45);
-}
-.download-meta-item svg { color: var(--gold-400); flex-shrink: 0; }
 
-.pdf-card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(200,155,60,0.2);
-    border-radius: 16px;
-    padding: 2.5rem 2rem;
-    min-width: 260px;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    position: relative;
-    overflow: hidden;
-    transition: border-color 0.3s, box-shadow 0.3s;
-}
-.pdf-card:hover {
-    border-color: rgba(200,155,60,0.5);
-    box-shadow: 0 24px 60px rgba(0,0,0,0.3);
-}
-.pdf-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold-400), transparent);
-}
-.pdf-icon-wrap {
-    width: 80px; height: 80px;
-    margin: 0 auto 1.25rem;
-    background: linear-gradient(135deg, rgba(200,155,60,0.15), rgba(200,155,60,0.06));
-    border: 1.5px solid rgba(200,155,60,0.3);
-    border-radius: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.4s var(--ease-back), background 0.3s;
-}
-.pdf-card:hover .pdf-icon-wrap { transform: scale(1.08) rotate(-4deg); background: rgba(200,155,60,0.22); }
-.pdf-icon-wrap svg { width: 38px; height: 38px; color: var(--gold-400); }
-.pdf-card__title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--white); margin-bottom: 0.4rem; }
-.pdf-card__size  { font-size: 0.78rem; color: rgba(255,255,255,0.35); margin-bottom: 1.75rem; }
-.pdf-card__note  { font-size: 0.72rem; color: rgba(255,255,255,0.25); margin-top: 1rem; }
-
-.btn-pdf-download {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-    width: 100%;
-    padding: 0.85rem 1.5rem;
-    background: linear-gradient(135deg, var(--gold-500), var(--gold-300));
-    color: var(--green-950);
-    font-weight: 700;
-    font-size: 0.88rem;
-    letter-spacing: 0.03em;
-    border-radius: 8px;
-    box-shadow: 0 8px 24px rgba(200,155,60,0.25);
-    transition: transform 0.3s var(--ease-expo), box-shadow 0.3s ease, opacity 0.2s;
-    cursor: pointer;
-    border: none;
-    font-family: var(--font-body);
-}
-.btn-pdf-download:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 14px 36px rgba(200,155,60,0.4);
-}
-.btn-pdf-download:active { transform: translateY(0); opacity: 0.85; }
-.btn-pdf-download.loading { opacity: 0.7; pointer-events: none; }
-
-.pdf-progress {
-    height: 2px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 2px;
-    margin-top: 1rem;
-    overflow: hidden;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-.pdf-progress.show { opacity: 1; }
-.pdf-progress-bar {
-    height: 100%;
-    background: linear-gradient(90deg, var(--gold-500), var(--gold-300));
-    border-radius: 2px;
-    width: 0%;
-    transition: width 0.4s ease;
-}
-
-/* ================================================================
-   KONTAK
-================================================================ */
-.kontak-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: start;
-}
-.kontak__title {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 3.5vw, 2.8rem);
-    font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-    margin: 1rem 0 1.25rem;
-    color: var(--green-900);
-}
-.kontak__title em { font-style: italic; color: var(--green-500); }
-.kontak__desc { font-size: 1rem; line-height: 1.8; color: var(--ink-500); margin-bottom: 2.5rem; }
-.kontak__items { display: flex; flex-direction: column; gap: 1rem; }
-.kontak__item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.25rem 1.5rem;
-    background: var(--cream);
-    border: 1px solid var(--ink-100);
-    border-radius: 10px;
-    transition: border-color 0.3s, transform 0.3s var(--ease-expo), box-shadow 0.3s;
-}
-.kontak__item:hover {
-    border-color: var(--green-100);
-    transform: translateX(6px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-}
-.kontak__item-icon {
-    width: 44px; height: 44px;
-    background: var(--green-50);
-    border: 1px solid var(--green-100);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    font-size: 1.1rem;
-}
-.kontak__item-label { font-size: 0.75rem; font-weight: 600; color: var(--green-600); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.15rem; }
-.kontak__item-value { font-size: 0.95rem; font-weight: 500; color: var(--ink-700); }
-
-.kontak__map {
-    border-radius: 12px;
-    height: 360px;
-    background: linear-gradient(135deg, var(--green-50), var(--cream));
-    border: 1px solid var(--ink-100);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 1rem;
-    padding: 2rem;
-}
-.kontak__map-icon { font-size: 3.5rem; }
-.kontak__map-text { font-size: 0.9rem; color: var(--ink-500); line-height: 1.6; }
-.kontak__map-text strong { display: block; font-family: var(--font-display); font-size: 1.4rem; color: var(--green-800); margin-bottom: 0.5rem; }
-
-.collab-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1.25rem;
-    background: var(--green-50);
-    border: 1px solid var(--green-100);
-    border-radius: 999px;
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--green-700);
-    margin-bottom: 1rem;
-    letter-spacing: 0.04em;
-}
-
-/* ================================================================
-   FOOTER
-================================================================ */
-.footer {
-    background: var(--green-950);
-    color: rgba(255,255,255,0.45);
-    text-align: center;
-    padding: 2.5rem 2rem;
-    font-size: 0.85rem;
-    border-top: 1px solid rgba(200,155,60,0.12);
-}
-.footer strong  { color: rgba(255,255,255,0.8); font-weight: 600; }
-.footer__gold   { color: var(--gold-400); }
-
-/* ================================================================
-   RESPONSIVE
-================================================================ */
-@media (max-width: 900px) {
-    .about-layout, .kontak-layout { grid-template-columns: 1fr; gap: 3rem; }
-    .about__badge { left: 0.5rem; bottom: -1rem; }
-    .about__ring  { display: none; }
-    .galeri-grid  { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
-    .download-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-    .pdf-card { min-width: auto; }
-}
-@media (max-width: 640px) {
-    .nav__links a:not(.nav__lang a) { font-size: 0.75rem; padding: 0.4rem 0.7rem; }
-    .nav__lang { margin-left: 0.75rem; padding-left: 0.75rem; }
-    .about__stats { grid-template-columns: 1fr 1fr; }
-    .galeri-grid  { grid-template-columns: repeat(2, 1fr); }
-    .hero__actions { flex-direction: column; }
-    .hero__bg { animation: none; }
-}
-@media (max-width: 420px) {
-    .about__stats { grid-template-columns: 1fr; }
-    .nav__links a:not(.nav__lang a) { display: none; }
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-    .reveal { opacity: 1; transform: none; }
-}
-
-/* ── Multi-PDF Grid ── */
 .pdf-multi-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -1124,37 +974,127 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .btn-pdf-item svg { width: 14px; height: 14px; flex-shrink: 0; }
 .btn-pdf-item:disabled { opacity: 0.6; pointer-events: none; }
 
-/* Container utama slider */
+/* ================================================================
+   KONTAK
+================================================================ */
+.kontak-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+}
+.kontak__title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin: 1rem 0 1.25rem;
+    color: var(--green-900);
+}
+.kontak__title em { font-style: italic; color: var(--green-500); }
+.kontak__desc { font-size: 1rem; line-height: 1.8; color: var(--ink-500); margin-bottom: 2.5rem; }
+.kontak__items { display: flex; flex-direction: column; gap: 1rem; }
+.kontak__item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--cream);
+    border: 1px solid var(--ink-100);
+    border-radius: 10px;
+    transition: border-color 0.3s, transform 0.3s var(--ease-expo), box-shadow 0.3s;
+}
+.kontak__item:hover {
+    border-color: var(--green-100);
+    transform: translateX(6px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+.kontak__item-icon {
+    width: 44px; height: 44px;
+    background: var(--green-50);
+    border: 1px solid var(--green-100);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+}
+.kontak__item-label { font-size: 0.75rem; font-weight: 600; color: var(--green-600); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.15rem; }
+.kontak__item-value { font-size: 0.95rem; font-weight: 500; color: var(--ink-700); }
+
+.kontak__map {
+    border-radius: 12px;
+    height: 360px;
+    background: linear-gradient(135deg, var(--green-50), var(--cream));
+    border: 1px solid var(--ink-100);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 2rem;
+}
+.kontak__map-icon { font-size: 3.5rem; }
+.kontak__map-text { font-size: 0.9rem; color: var(--ink-500); line-height: 1.6; }
+.kontak__map-text strong { display: block; font-family: var(--font-display); font-size: 1.4rem; color: var(--green-800); margin-bottom: 0.5rem; }
+
+.collab-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    background: var(--green-50);
+    border: 1px solid var(--green-100);
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--green-700);
+    margin-bottom: 1rem;
+    letter-spacing: 0.04em;
+}
+
+/* ================================================================
+   FOOTER
+================================================================ */
+.footer {
+    background: var(--green-950);
+    color: rgba(255,255,255,0.45);
+    text-align: center;
+    padding: 2.5rem 2rem;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(200,155,60,0.12);
+}
+.footer strong  { color: rgba(255,255,255,0.8); font-weight: 600; }
+.footer__gold   { color: var(--gold-400); }
+
+/* ================================================================
+   VIDEO SLIDER
+================================================================ */
 .video-slider {
     width: 100%;
-    overflow-x: auto; /* Mengaktifkan scroll horizontal */
-    scroll-snap-type: x mandatory; /* Membuat slide "magnetis" berhenti di tengah */
-    scrollbar-width: none; /* Menghilangkan scrollbar di Firefox */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
     padding-bottom: 20px;
 }
+.video-slider::-webkit-scrollbar { display: none; }
 
-.video-slider::-webkit-scrollbar {
-    display: none; /* Menghilangkan scrollbar di Chrome/Safari */
-}
-
-/* Jalur slide */
 .video-slider__track {
     display: flex;
-    gap: 20px; /* Jarak antar video */
+    gap: 20px;
 }
 
-/* Kartu video individual */
 .video-card {
-    min-width: 80%; /* Di HP, video terlihat 80% lebarnya */
-    scroll-snap-align: center; /* Slide berhenti tepat di tengah layar */
+    min-width: 80%;
+    scroll-snap-align: center;
     flex-shrink: 0;
 }
 
-/* Desktop: Tampilkan lebih kecil agar muat banyak */
 @media (min-width: 992px) {
-    .video-card {
-        min-width: 600px; 
-    }
+    .video-card { min-width: 600px; }
 }
 
 .video-caption {
@@ -1166,14 +1106,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
     opacity: 0.8;
 }
 
-.slider-hint {
-    color: var(--gold); /* Gunakan warna emas tema Anda */
-    text-align: center;
-    font-size: 0.8rem;
-    margin-top: 10px;
-}
-
-/* Container pembungkus utama */
 .video-slider-container {
     position: relative;
     display: flex;
@@ -1181,7 +1113,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
     width: 100%;
 }
 
-/* Gaya dasar tombol slide */
 .slider-btn {
     position: absolute;
     top: 50%;
@@ -1189,7 +1120,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background: rgba(212, 175, 55, 0.9); /* Warna Emas Tema Anda */
+    background: rgba(212, 175, 55, 0.9);
     color: #000;
     border: none;
     cursor: pointer;
@@ -1200,16 +1131,310 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
-
 .slider-btn:hover {
     background: #fff;
     transform: translateY(-50%) scale(1.1);
 }
-
 .slider-btn.prev { left: -10px; }
 .slider-btn.next { right: -10px; }
 
-/* Sembunyikan tombol di layar sangat kecil agar tidak menutupi video */
 @media (max-width: 480px) {
     .slider-btn { display: none; }
+}
+
+/* ================================================================
+   RESPONSIVE
+================================================================ */
+@media (max-width: 900px) {
+    .about-layout, .kontak-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .about__badge { left: 0.5rem; bottom: -1rem; }
+    .about__ring  { display: none; }
+    .galeri-grid  { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+    .galeri-video-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+    .nav__links a:not(.nav__lang a) { font-size: 0.75rem; padding: 0.4rem 0.7rem; }
+    .nav__lang { margin-left: 0.75rem; padding-left: 0.75rem; }
+    .about__stats { grid-template-columns: 1fr 1fr; }
+    .galeri-grid  { grid-template-columns: repeat(2, 1fr); }
+    .hero__actions { flex-direction: column; }
+    .hero__bg { animation: none; }
+    .about__cta-wrap { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 420px) {
+    .about__stats { grid-template-columns: 1fr; }
+    .nav__links a:not(.nav__lang a) { display: none; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    .reveal { opacity: 1; transform: none; }
+}
+
+/* ================================================================
+   STYLE-VIDEO-ENHANCED.CSS
+   Enhanced Video Gallery for Kegiatan (Activities)
+   Add: <link rel="stylesheet" href="style-video-enhanced.css">
+   to ALL HTML files (index.html, en.html, ar.html, ja.html, nl.html)
+================================================================ */
+
+/* ── Override: grid layout ── */
+.galeri-video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+    margin-top: 0.5rem;
+}
+
+/* ── Card container ── */
+.galeri-video-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid var(--ink-100);
+    box-shadow: 0 6px 24px rgba(7, 26, 16, 0.08);
+    transition:
+        transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.45s ease,
+        border-color 0.3s ease;
+    position: relative;
+}
+
+/* Gold top accent line — animates in on hover */
+.galeri-video-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--green-500), var(--gold-400), var(--gold-300));
+    z-index: 5;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: 18px 18px 0 0;
+}
+
+.galeri-video-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 24px 64px rgba(7, 26, 16, 0.15), 0 0 0 1px rgba(200, 155, 60, 0.18);
+    border-color: rgba(200, 155, 60, 0.25);
+}
+
+.galeri-video-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* ── Label bar (top of card, above video) ── */
+.galeri-video-card__label-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 1.25rem 0.75rem;
+    background: linear-gradient(135deg, var(--green-50), var(--cream));
+    border-bottom: 1px solid var(--ink-100);
+}
+
+.galeri-video-card__num {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--green-200, #a8e6c3);
+    line-height: 1;
+    /* Faint watermark-style number */
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--green-300, #6ed99a);
+    opacity: 0.55;
+    letter-spacing: -0.03em;
+    transition: opacity 0.3s ease;
+}
+
+.galeri-video-card:hover .galeri-video-card__num {
+    opacity: 0.9;
+}
+
+.galeri-video-card__tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--green-700);
+    background: var(--green-50);
+    border: 1px solid var(--green-100);
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    transition: background 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.galeri-video-card:hover .galeri-video-card__tag {
+    background: linear-gradient(135deg, rgba(39,146,79,0.12), rgba(200,155,60,0.1));
+    border-color: var(--gold-300);
+    color: var(--gold-500);
+}
+
+/* ── Video wrapper — flush, no radius override ── */
+.galeri-video-card .video-wrap {
+    border-radius: 0;
+    box-shadow: none;
+    max-width: 100%;
+    margin: 0;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    background: var(--green-950);
+}
+
+.galeri-video-card .video-wrap video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Custom video controls overlay look */
+.galeri-video-card .video-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        transparent 60%,
+        rgba(7, 26, 16, 0.18) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+.galeri-video-card:hover .video-wrap::after {
+    opacity: 0;
+}
+
+/* ── Footer info strip ── */
+.galeri-video-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    background: var(--white);
+    border-top: 1px solid var(--ink-100);
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.galeri-video-card__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.galeri-video-card__info strong {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--green-900);
+    font-family: var(--font-display);
+    line-height: 1.3;
+}
+
+.galeri-video-card__info span {
+    font-size: 0.73rem;
+    color: var(--ink-500);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+.galeri-video-card__play-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--green-600), var(--green-500));
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 14px rgba(30, 110, 63, 0.35);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, background 0.3s;
+}
+
+.galeri-video-card__play-icon svg {
+    margin-left: 2px; /* optical centering for play icon */
+}
+
+.galeri-video-card:hover .galeri-video-card__play-icon {
+    transform: scale(1.15);
+    background: linear-gradient(135deg, var(--gold-500), var(--gold-400));
+    box-shadow: 0 6px 20px rgba(200, 155, 60, 0.4);
+}
+
+/* ── Shimmer loading skeleton ── */
+.galeri-video-card__skeleton {
+    aspect-ratio: 16/9;
+    background: linear-gradient(90deg, var(--ink-100) 25%, var(--cream) 50%, var(--ink-100) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.6s infinite;
+}
+
+@keyframes shimmer {
+    0%   { background-position: 200% center; }
+    100% { background-position: -200% center; }
+}
+
+/* ── Section divider for video grid ── */
+.galeri-video-grid-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+    color: var(--ink-500);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.galeri-video-grid-header::before,
+.galeri-video-grid-header::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--ink-100);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .galeri-video-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .galeri-video-card__label-bar {
+        padding: 0.75rem 1rem 0.65rem;
+    }
+    .galeri-video-card__num {
+        font-size: 1.2rem;
+    }
+    .galeri-video-card__footer {
+        padding: 0.85rem 1rem;
+    }
+    .galeri-video-card__info strong {
+        font-size: 0.82rem;
+    }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+    .galeri-video-card,
+    .galeri-video-card::before,
+    .galeri-video-card__play-icon,
+    .galeri-video-card__tag {
+        transition: none !important;
+        animation: none !important;
+    }
 }
