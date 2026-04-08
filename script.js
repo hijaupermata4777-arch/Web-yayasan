@@ -9,8 +9,9 @@
 
     /* ══════════ 2. SCROLL REVEAL ══════════ */
     var reveals = document.querySelectorAll('.reveal');
+    var revealObs;
     if ('IntersectionObserver' in window) {
-        var revealObs = new IntersectionObserver(function (entries) {
+        revealObs = new IntersectionObserver(function (entries) {
             entries.forEach(function (e) {
                 if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
             });
@@ -20,7 +21,43 @@
         reveals.forEach(function (el) { el.classList.add('visible'); });
     }
 
-    /* ══════════ 3. LIGHTBOX ══════════ */
+    /* ══════════ 3. GALERI TAB TOGGLE ══════════ */
+    var tabs        = document.querySelectorAll('.galeri-tab');
+    var galeriPhoto = document.getElementById('galeriPhoto');
+    var galeriVideo = document.getElementById('galeriVideo');
+
+    if (tabs.length && galeriPhoto && galeriVideo) {
+        tabs.forEach(function (tab) {
+            tab.addEventListener('click', function () {
+                var target = tab.getAttribute('data-tab');
+
+                // Update active tab
+                tabs.forEach(function (t) { t.classList.remove('active'); });
+                tab.classList.add('active');
+
+                if (target === 'foto') {
+                    galeriPhoto.style.display = 'grid';
+                    galeriVideo.style.display = 'none';
+                } else {
+                    galeriPhoto.style.display = 'none';
+                    galeriVideo.style.display = 'grid';
+
+                    // Trigger reveal for video cards that haven't animated yet
+                    if (revealObs) {
+                        galeriVideo.querySelectorAll('.reveal:not(.visible)').forEach(function (el) {
+                            revealObs.observe(el);
+                        });
+                    } else {
+                        galeriVideo.querySelectorAll('.reveal').forEach(function (el) {
+                            el.classList.add('visible');
+                        });
+                    }
+                }
+            });
+        });
+    }
+
+    /* ══════════ 4. LIGHTBOX ══════════ */
     var lightbox   = document.getElementById('lightbox');
     var lbBackdrop = document.getElementById('lightboxBackdrop');
     var lbClose    = document.getElementById('lightboxClose');
@@ -88,7 +125,7 @@
         }, { passive: true });
     }
 
-    /* ══════════ 4. MULTI-PDF DOWNLOAD ══════════ */
+    /* ══════════ 5. MULTI-PDF DOWNLOAD ══════════ */
     var PDF_DOCS = [
         {
             name: 'rencana layanan 3 desa (Cinangka, bj jengkol, Tegalwaru)',
@@ -146,7 +183,7 @@
             });
         });
 
-        if ('IntersectionObserver' in window) {
+        if (revealObs) {
             grid.querySelectorAll('.reveal').forEach(function (el) { revealObs.observe(el); });
         } else {
             grid.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible'); });
@@ -186,13 +223,11 @@
         }, 1600);
     }
 
-    /* ══════════ 5. VIDEO SLIDER — halaman ID/EN (id="videoSlider") ══════════ */
+    /* ══════════ 6. VIDEO SLIDER — halaman ID/EN (id="videoSlider") ══════════ */
     var slider  = document.getElementById('videoSlider');
     var btnPrev = document.getElementById('slidePrev');
     var btnNext = document.getElementById('slideNext');
 
-    /* PERBAIKAN UTAMA: cek null dulu sebelum pakai — 
-       kalau null (halaman Arab), skip blok ini dan tidak crash */
     if (slider && btnPrev && btnNext) {
         btnNext.addEventListener('click', function () {
             var cardWidth = slider.querySelector('.video-card').offsetWidth + 20;
@@ -214,7 +249,15 @@
         btnPrev.style.opacity = '0.3';
     }
 
-    /* ══════════ 6. VIDEO SLIDER — halaman AR (id="videoSliderAr") ══════════ */
+    /* ══════════ 7. VIDEO SLIDER — halaman AR (id="videoSliderAr") ══════════ */
+    /*
+        FIX RTL:
+        Dalam konteks RTL, scrollLeft di browser modern bisa bernilai negatif
+        atau terbalik. Kita selalu paksa scroll LTR normal karena slider 
+        menggunakan dir="ltr" secara eksplisit.
+        Tombol "السابق" (prev) ada di kanan → scroll ke KIRI (negatif/kurang)
+        Tombol "التالي" (next) ada di kiri  → scroll ke KANAN (positif/lebih)
+    */
     var sliderAr  = document.getElementById('videoSliderAr');
     var btnPrevAr = document.getElementById('slidePrevAr');
     var btnNextAr = document.getElementById('slideNextAr');
@@ -225,16 +268,18 @@
             return card ? card.offsetWidth + 20 : 320;
         }
 
+        // زر التالي (di kiri layar AR) → geser ke kanan (slide berikutnya)
         btnNextAr.addEventListener('click', function () {
             sliderAr.scrollBy({ left: getCardWidthAr(), behavior: 'smooth' });
         });
 
+        // زر السابق (di kanan layar AR) → geser ke kiri (slide sebelumnya)
         btnPrevAr.addEventListener('click', function () {
             sliderAr.scrollBy({ left: -getCardWidthAr(), behavior: 'smooth' });
         });
 
         sliderAr.addEventListener('scroll', function () {
-            var scrollLeft = sliderAr.scrollLeft;
+            var scrollLeft = Math.abs(sliderAr.scrollLeft); // abs untuk handle RTL negative scroll
             var maxScroll  = sliderAr.scrollWidth - sliderAr.clientWidth;
             btnPrevAr.style.opacity = scrollLeft <= 0             ? '0.3' : '1';
             btnNextAr.style.opacity = scrollLeft >= maxScroll - 5 ? '0.3' : '1';
