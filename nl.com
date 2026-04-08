@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yayasan Trah Manshur - Digitaal Voorstel voor Gemeenschapsontwikkeling en -dienstverlening 2026">
+    <title>Yayasan Trah Manshur — Digitaal Voorstel 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-video-enhanced.css">
+</head>
+<body>
+
+<!-- ═══════════ NAVIGATIE ═══════════ -->
+<nav class="nav" id="mainNav">
+    <div class="nav__logo">Trah <span>Manshur</span></div>
+    <ul class="nav__links">
+        <li><a href="#tentang">Over Ons</a></li>
+        <li><a href="#video-profil">Profiel</a></li>
+        <li><a href="#galeri">Galerij</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#kontak">Contact</a></li>
+        <li class="nav__lang">
+            <a href="index.html">ID</a>
+            <span class="sep">·</span>
+            <a href="en.html">EN</a>
+            <span class="sep">·</span>
+            <a href="ar.html">AR</a>
+            <span class="sep">·</span>
+            <a href="ja.html">JA</a>
+            <span class="sep">·</span>
+            <a href="nl.html" class="active">NL</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<div class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__vignette"></div>
+    <div class="hero__line"></div>
+    <div class="hero__content">
+        <span class="hero__badge">Digitaal Voorstel 2026</span>
+        <h1 class="hero__title">Samen een Toekomst Bouwen<br><em>met Trah Manshur</em></h1>
+        <p class="hero__subtitle">Voorstel voor gemeenschapsontwikkeling en -dienstverlening om echte impact te creëren — duurzaam, meetbaar en diepgaand betekenisvol.</p>
+        <div class="hero__actions">
+            <a href="#tentang" class="btn-gold">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+                Meer Ontdekken
+            </a>
+            <a href="#download" class="btn-outline">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
+                Voorstel PDF Downloaden
+            </a>
+        </div>
+    </div>
+    <div class="hero__scroll">
+        Scroll
+        <div class="hero__scroll-line"></div>
+    </div>
+</div>
+
+<!-- ═══════════ OVER ONS ═══════════ -->
+<section id="tentang" class="section section--white">
+    <div class="container">
+        <div class="about-layout">
+            <div class="about__text reveal">
+                <span class="about__eyebrow">Over Ons</span>
+                <h2 class="about__title">Elke Bijdrage <em>Verandert Levens</em></h2>
+                <div class="about__body">
+                    <p>In afgelegen dorpen — ver van fatsoenlijke voorzieningen, ver van de aandacht — worstelen nog steeds veel van onze broeders en zusters om simpelweg schoon water, basisonderwijs en hoop te krijgen. <strong>Stichting Trah Manshur is er om de brug te zijn tussen uw betrokkenheid en degenen die het het meest nodig hebben.</strong></p>
+                    <p>Niet zomaar vluchtige hulp. Wij bouwen duurzame programma's op het gebied van sociaal welzijn, onderwijs en religie — meetbaar, transparant en met echte impact. Samen met honderden begunstigden in 3 dorpen bewijzen wij dat <em>collectieve betrokkenheid grote verandering kan bewerkstelligen.</em></p>
+                    <p>Doe mee. Doneer. Word deel van dit verhaal van verandering — want één handeling van u vandaag kan morgen het licht zijn voor veel gezinnen.</p>
+                </div>
+            </div>
+            <div class="about__visual reveal reveal-delay-2">
+                <div class="about__ring"></div>
+                <div class="about__img-wrap">
+                    <img src="image/foto1.jpeg" alt="Activiteiten van Yayasan Trah Manshur" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ VIDEOPROFIEL ═══════════ -->
+<section id="video-profil" class="section section--dark">
+    <div class="container">
+        <div class="sec-header reveal">
+            <span class="sec-eyebrow">Situatie ter Plaatse</span>
+            <h2 class="sec-title">De Urgentie van <em>Onze Missie</em></h2>
+            <div class="sec-divider"></div>
+        </div>
+
+        <div class="video-slider">
+        <div class="video-slider-container">
+                <button class="slider-btn prev" id="slidePrev" aria-label="Vorige">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+                </button>
+                <button class="slider-btn next" id="slideNext" aria-label="Volgende">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+
+                <div class="video-slider" id="videoSlider">
+            <div class="video-slider__track">
+                <div class="video-card">
+                    <div class="video-wrap">
+                        <iframe src="https://www.youtube.com/embed/qf60KJDmAho"
+                            title="Trah Manshur Foundation Profielvideo"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen loading="lazy"></iframe>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-wrap">
+                        <iframe src="https://www.youtube.com/embed/LDbUK9trMSY"
+                            title="Trah Manshur Foundation - Activiteit 2"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen loading="lazy"></iframe>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-wrap">
+                        <iframe src="https://www.youtube.com/embed/DxXKSx2XDOM"
+                            title="Trah Manshur Foundation - Activiteit 3"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+                </div>
+             </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ GALERIJ ═══════════ -->
+<section id="galeri" class="section section--cream">
+    <div class="container">
+        <div class="sec-header reveal">
+            <span class="sec-eyebrow">Documentatie</span>
+            <h2 class="sec-title">Activiteiten<em>galerij</em></h2>
+            <div class="sec-divider"></div>
+            <p class="sec-desc">Momenten van echte actie van vrijwilligers en de glimlachen van de begunstigden van Yayasan Trah Manshur.</p>
+        </div>
+
+        <!-- TAB TOGGLE -->
+        <div class="galeri-tabs reveal">
+            <button class="galeri-tab active" data-tab="foto">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                Foto's
+            </button>
+            <button class="galeri-tab" data-tab="video">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                Video's
+            </button>
+        </div>
+
+        <!-- FOTO GRID -->
+        <div class="galeri-grid reveal" id="galeriPhoto">
+            <div class="galeri-item" data-src="image/foto1.jpeg" data-caption="Activiteitsdocumentatie 1">
+                <img src="image/foto1.jpeg" alt="Documentatie 1" loading="lazy">
+                <div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+            </div>
+            <div class="galeri-item" data-src="image/foto2.jpeg" data-caption="Activiteitsdocumentatie 2">
+                <img src="image/foto2.jpeg" alt="Documentatie 2" loading="lazy">
+                <div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+            </div>
+            <div class="galeri-item" data-src="image/foto3.jpeg" data-caption="Activiteitsdocumentatie 3">
+                <img src="image/foto3.jpeg" alt="Documentatie 3" loading="lazy">
+                <div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+            </div>
+            <div class="galeri-item" data-src="image/foto4.jpeg" data-caption="Activiteitsdocumentatie 4">
+                <img src="image/foto4.jpeg" alt="Documentatie 4" loading="lazy">
+                <div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+            </div>
+            <div class="galeri-item" data-src="image/foto5.jpeg" data-caption="Activiteitsdocumentatie 5">
+                <img src="image/foto5.jpeg" alt="Documentatie 5" loading="lazy">
+                <div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+            </div>
+            <div class="galeri-item" data-src="image/foto6.jpeg" data-caption="Activiteitsdocumentatie 6">
+                <img src="image/foto6.jpeg" alt="Documentatie 6" loading="lazy">
+                <div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+            </div>
+            <div class="galeri-item" data-src="image/foto7.jpeg" data-caption="Activiteitsdocumentatie 7">
+                <img src="image/foto7.jpeg" alt="Documentatie 7" loading="lazy">
+                <div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+            </div>
+            <div class="galeri-item" data-src="image/foto8.jpeg" data-caption="Activiteitsdocumentatie 8">
+                <img src="image/foto8.jpeg" alt="Documentatie 8" loading="lazy">
+                <div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+            </div>
+        </div>
+
+        <!-- VIDEO GRID ENHANCED -->
+        <div class="galeri-video-grid" id="galeriVideo" style="display:none;">
+            <div class="galeri-video-card reveal">
+                <div class="galeri-video-card__label-bar">
+                    <span class="galeri-video-card__num">01</span>
+                    <span class="galeri-video-card__tag">📹 Activiteitsverslag</span>
+                </div>
+                <div class="video-wrap">
+                    <video width="640" height="360" controls>
+                        <source src="video/v1.mp4" type="video/mp4">
+                        <source src="video/v1.webm" type="video/webm">
+                    </video>
+                </div>
+                <div class="galeri-video-card__footer">
+                    <div class="galeri-video-card__info">
+                        <strong>Sociaal Activiteitsdocumentatie</strong>
+                        <span>Yayasan Trah Manshur — 2026</span>
+                    </div>
+                    <div class="galeri-video-card__play-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </div>
+                </div>
+            </div>
+            <div class="galeri-video-card reveal reveal-delay-1">
+                <div class="galeri-video-card__label-bar">
+                    <span class="galeri-video-card__num">02</span>
+                    <span class="galeri-video-card__tag">📹 Activiteitsverslag</span>
+                </div>
+                <div class="video-wrap">
+                    <video width="640" height="360" controls>
+                        <source src="video/v2.mp4" type="video/mp4">
+                        <source src="video/v2.webm" type="video/webm">
+                    </video>
+                </div>
+                <div class="galeri-video-card__footer">
+                    <div class="galeri-video-card__info">
+                        <strong>Gemeenschapsondersteuningsactiviteit</strong>
+                        <span>Yayasan Trah Manshur — 2026</span>
+                    </div>
+                    <div class="galeri-video-card__play-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ LIGHTBOX MODAL ═══════════ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Uitvergrote foto">
+    <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
+    <button class="lightbox__close" id="lightboxClose" aria-label="Sluiten">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Vorige foto">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    <div class="lightbox__stage">
+        <div class="lightbox__img-wrap" id="lightboxImgWrap">
+            <img class="lightbox__img" id="lightboxImg" src="" alt="">
+        </div>
+        <div class="lightbox__caption" id="lightboxCaption"></div>
+        <div class="lightbox__counter" id="lightboxCounter"></div>
+    </div>
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Volgende foto">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
+</div>
+
+<!-- ═══════════ DOCUMENTEN DOWNLOADEN ═══════════ -->
+<section id="download" class="download-section">
+    <div class="download-section__deco">PDF</div>
+    <div style="position:relative;z-index:2;max-width:1160px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem);">
+        <div class="sec-header reveal">
+            <span class="sec-eyebrow">Documenten Downloaden</span>
+            <h2 class="sec-title">Officiële <em>Stichtingsdocumenten</em></h2>
+            <div class="sec-divider"></div>
+            <p class="sec-desc">Alle documenten zijn gratis beschikbaar, zonder registratie. Deel ze gerust met partners, donateurs en belanghebbenden.</p>
+        </div>
+        <div class="pdf-multi-grid reveal reveal-delay-1" id="pdfGrid"></div>
+    </div>
+</section>
+
+<!-- ═══════════ CONTACT ═══════════ -->
+<section id="kontak" class="section section--white">
+    <div class="container">
+        <div class="kontak-layout">
+            <div class="reveal">
+                <span class="collab-pill">🤝 Laten We Samenwerken</span>
+                <h2 class="kontak__title">Samen Kunnen We <em>Meer Bereiken</em></h2>
+                <p class="kontak__desc">Geïnteresseerd in samenwerking, vrijwilligerswerk of het ondersteunen van onze stichting? Onze deur staat altijd wijd open voor iedereen die echte impact wil maken.</p>
+                <div class="kontak__items">
+                    <div class="kontak__item">
+                        <div>
+                            <div class="kontak__item-label">E-mail</div>
+                            <div class="kontak__item-value">Trahmanshur@gmail.com</div>
+                        </div>
+                    </div>
+                    <div class="kontak__item">
+                        <div>
+                            <div class="kontak__item-label">WhatsApp / Telefoon</div>
+                            <div class="kontak__item-value">+62 811-1193-55</div>
+                            <div class="kontak__item-value">+62 817-1087-17</div>
+                            <div class="kontak__item-value">+62 899-4641-111</div>
+                        </div>
+                    </div>
+                    <div class="kontak__item">
+                        <div>
+                            <div class="kontak__item-label">Bankrekening</div>
+                            <div class="kontak__item-value">BJB KCP BOJONG GEDE: 0104330398100</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="kontak__map reveal reveal-delay-2">
+                <div class="kontak__map-icon">🌿</div>
+                <div class="kontak__map-text">
+                    <strong>Yayasan Trah Manshur</strong>
+                    Aanwezig om een positieve impact te maken op de gemeenschap. Sluit u aan bij ons op de reis van betekenisvol geven.
+                </div>
+                <a href="mailto:Trahmanshur@gmail.com" class="btn-gold" style="margin-top:1rem; font-size:0.85rem; padding: 0.75rem 1.75rem;">
+                    Bericht Sturen
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+    <p>&copy; 2026 <strong>Yayasan Trah Manshur</strong> · Alle rechten voorbehouden · Gemaakt met <span class="footer__gold">♥</span> voor anderen</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
