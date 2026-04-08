@@ -27,6 +27,10 @@
             <a href="en.html">EN</a>
             <span class="sep">·</span>
             <a href="ar.html">AR</a>
+            <span class="sep">·</span>
+            <a href="ja.html">JA</a>
+            <span class="sep">·</span>
+            <a href="nl.html">NL</a>
         </li>
     </ul>
 </nav>
@@ -63,10 +67,11 @@
         <div class="about-layout">
             <div class="about__text reveal">
                 <span class="about__eyebrow">Tentang Kami</span>
-                <h2 class="about__title">Yayasan yang Lahir dari <em>Kepedulian</em></h2>
+                <h2 class="about__title">Setiap Rupiah Anda, <em>Mengubah Nyawa</em></h2>
                 <div class="about__body">
-                    <p>Yayasan Trah Manshur adalah organisasi sosial, pendidikan, dan keagamaan yang berdedikasi untuk memberikan dampak positif bagi masyarakat luas. Kami percaya bahwa perubahan dimulai dari kepedulian yang nyata dan tindakan yang terukur.</p>
-                    <p>Dengan tim relawan yang bersemangat dan program yang dirancang secara cermat, kami hadir di garis terdepan pemberdayaan masyarakat — menjangkau mereka yang paling membutuhkan.</p>
+                    <p>Di pelosok desa — jauh dari fasilitas layak, jauh dari perhatian — masih banyak saudara kita yang berjuang hanya untuk mendapatkan air bersih, pendidikan dasar, dan harapan. <strong>Yayasan Trah Manshur hadir untuk menjadi jembatan antara kepedulian Anda dan mereka yang paling membutuhkan.</strong></p>
+                    <p>Bukan sekadar bantuan sesaat. Kami membangun program berkelanjutan di bidang sosial, pendidikan, dan keagamaan — terukur, transparan, dan nyata dampaknya. Bersama ratusan penerima manfaat di 3 desa, kami membuktikan bahwa <em>kepedulian kolektif bisa menggerakkan perubahan besar.</em></p>
+                    <p>Bergabunglah. Donasikan. Jadilah bagian dari kisah perubahan ini — karena satu tindakan Anda hari ini bisa menjadi cahaya bagi banyak keluarga esok hari.</p>
                 </div>
             </div>
             <div class="about__visual reveal reveal-delay-2">
@@ -141,7 +146,21 @@
             <div class="sec-divider"></div>
             <p class="sec-desc">Momen-momen aksi nyata relawan dan senyum para penerima manfaat Yayasan Trah Manshur.</p>
         </div>
-        <div class="galeri-grid reveal">
+
+        <!-- TAB TOGGLE -->
+        <div class="galeri-tabs reveal">
+            <button class="galeri-tab active" data-tab="foto">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                Foto
+            </button>
+            <button class="galeri-tab" data-tab="video">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                Video
+            </button>
+        </div>
+
+        <!-- FOTO GRID -->
+        <div class="galeri-grid reveal" id="galeriPhoto">
             <div class="galeri-item" data-src="image/foto1.jpeg" data-caption="Dokumentasi Kegiatan 1">
                 <img src="image/foto1.jpeg" alt="Dokumentasi 1" loading="lazy">
                 <div class="galeri-item__zoom">
@@ -191,6 +210,52 @@
                 </div>
             </div>
         </div>
+
+        <!-- VIDEO GRID -->
+  <div class="galeri-video-grid" id="galeriVideo" style="display:none;">
+    <div class="galeri-video-card reveal">
+        <div class="galeri-video-card__label-bar">
+            <span class="galeri-video-card__num">01</span>
+            <span class="galeri-video-card__tag">📹 Kegiatan</span>
+        </div>
+        <div class="video-wrap">
+            <video width="640" height="360" controls>
+                <source src="video/v1.mp4" type="video/mp4">
+                <source src="video/v1.webm" type="video/webm">
+            </video>
+        </div>
+        <div class="galeri-video-card__footer">
+            <div class="galeri-video-card__info">
+                <strong>Dokumentasi Kegiatan Sosial</strong>
+                <span>Yayasan Trah Manshur — 2026</span>
+            </div>
+            <div class="galeri-video-card__play-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+        </div>
+    </div>
+    <div class="galeri-video-card reveal reveal-delay-1">
+        <div class="galeri-video-card__label-bar">
+            <span class="galeri-video-card__num">02</span>
+            <span class="galeri-video-card__tag">📹 Kegiatan</span>
+        </div>
+        <div class="video-wrap">
+            <video width="640" height="360" controls>
+                <source src="video/v2.mp4" type="video/mp4">
+                <source src="video/v2.webm" type="video/webm">
+            </video>
+        </div>
+        <div class="galeri-video-card__footer">
+            <div class="galeri-video-card__info">
+                <strong>Kegiatan Pengabdian Masyarakat</strong>
+                <span>Yayasan Trah Manshur — 2026</span>
+            </div>
+            <div class="galeri-video-card__play-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+        </div>
+    </div>
+</div>
     </div>
 </section>
 
@@ -226,7 +291,6 @@
 </div>
 
 <!-- ═══════════ DOWNLOAD PDF ═══════════ -->
-
 <section id="download" class="download-section">
     <div class="download-section__deco">PDF</div>
     <div style="position:relative;z-index:2;max-width:1160px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem);">
@@ -265,10 +329,10 @@
                             <div class="kontak__item-value">+62 899-4641-111</div>
                         </div>
                     </div>
-                     <div class="kontak__item">                        <div>
+                     <div class="kontak__item">
+                        <div>
                             <div class="kontak__item-label">Rekening Bank</div>
-                            <div class="kontak__item-value">-</div>
-
+                            <div class="kontak__item-value">BJB KCP BOJONG GEDE: 0104330398100</div>
                         </div>
                     </div>
                 </div>
@@ -286,7 +350,6 @@
         </div>
     </div>
 </section>
-
 
 <!-- ═══════════ FOOTER ═══════════ -->
 <footer class="footer">
