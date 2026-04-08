@@ -60,10 +60,11 @@
         <div class="about-layout">
             <div class="about__text reveal">
                 <span class="about__eyebrow">About Us</span>
-                <h2 class="about__title">A Foundation Born from <em>Compassion</em></h2>
+                <h2 class="about__title">Your Donation Can <em>Change Lives</em></h2>
                 <div class="about__body">
-                    <p>Trah Manshur Foundation is a social, educational, and religious organization dedicated to providing a positive impact on the community. We believe that change starts with genuine care and measurable action.</p>
-                    <p>With a passionate team of volunteers and carefully designed programs, we are at the forefront of community empowerment — reaching those who need it most.</p>
+                    <p>In remote villages — far from decent facilities, far from attention — many of our brothers and sisters still struggle just to access clean water, basic education, and hope. <strong>Trah Manshur Foundation is here to bridge the gap between your compassion and those who need it most.</strong></p>
+                    <p>This is not just momentary aid. We build sustainable programs in social, educational, and religious fields — measurable, transparent, and with real impact. Together with hundreds of beneficiaries across 3 villages, we prove that <em>collective compassion can drive enormous change.</em></p>
+                    <p>Join us. Donate. Become part of this story of change — because one action from you today can be a light for many families tomorrow.</p>
                 </div>
             </div>
             <div class="about__visual reveal reveal-delay-2">
@@ -134,7 +135,21 @@
             <div class="sec-divider"></div>
             <p class="sec-desc">Moments of real action by volunteers and the smiles of the beneficiaries of Trah Manshur Foundation.</p>
         </div>
-        <div class="galeri-grid reveal">
+
+        <!-- TAB TOGGLE -->
+        <div class="galeri-tabs reveal">
+            <button class="galeri-tab active" data-tab="foto">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                Photos
+            </button>
+            <button class="galeri-tab" data-tab="video">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                Videos
+            </button>
+        </div>
+
+        <!-- PHOTO GRID -->
+        <div class="galeri-grid reveal" id="galeriPhoto">
             <div class="galeri-item" data-src="image/foto1.jpeg" data-caption="Activity Documentation 1">
                 <img src="image/foto1.jpeg" alt="Documentation 1" loading="lazy">
                 <div class="galeri-item__zoom">
@@ -147,7 +162,7 @@
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
                 </div>
             </div>
-             <div class="galeri-item" data-src="image/foto3.jpeg" data-caption="Activity Documentation 3">
+            <div class="galeri-item" data-src="image/foto3.jpeg" data-caption="Activity Documentation 3">
                 <img src="image/foto3.jpeg" alt="Documentation 3" loading="lazy">
                 <div class="galeri-item__zoom">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
@@ -159,31 +174,77 @@
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
                 </div>
             </div>
-            <div class="galeri-item" data-src="image/foto4.jpeg" data-caption="Activity Documentation 4">
+            <div class="galeri-item" data-src="image/foto5.jpeg" data-caption="Activity Documentation 5">
                 <img src="image/foto5.jpeg" alt="Documentation 5" loading="lazy">
                 <div class="galeri-item__zoom">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
                 </div>
             </div>
-            <div class="galeri-item" data-src="image/foto4.jpeg" data-caption="Activity Documentation 4">
-                    <img src="image/foto6.jpeg" alt="Documentation 6" loading="lazy">
-                    <div class="galeri-item__zoom">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
-                    </div>
+            <div class="galeri-item" data-src="image/foto6.jpeg" data-caption="Activity Documentation 6">
+                <img src="image/foto6.jpeg" alt="Documentation 6" loading="lazy">
+                <div class="galeri-item__zoom">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+                </div>
             </div>
-            <div class="galeri-item" data-src="image/foto4.jpeg" data-caption="Activity Documentation 4">
+            <div class="galeri-item" data-src="image/foto7.jpeg" data-caption="Activity Documentation 7">
                 <img src="image/foto7.jpeg" alt="Documentation 7" loading="lazy">
                 <div class="galeri-item__zoom">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
                 </div>
             </div>
-            <div class="galeri-item" data-src="image/foto4.jpeg" data-caption="Activity Documentation 4">
+            <div class="galeri-item" data-src="image/foto8.jpeg" data-caption="Activity Documentation 8">
                 <img src="image/foto8.jpeg" alt="Documentation 8" loading="lazy">
                 <div class="galeri-item__zoom">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
                 </div>
             </div>
         </div>
+
+        <!-- VIDEO GRID -->
+       <div class="galeri-video-grid" id="galeriVideo" style="display:none;">
+    <div class="galeri-video-card reveal">
+        <div class="galeri-video-card__label-bar">
+            <span class="galeri-video-card__num">01</span>
+            <span class="galeri-video-card__tag">📹 Activities</span>
+        </div>
+        <div class="video-wrap">
+            <video width="640" height="360" controls>
+                <source src="video/v1.mp4" type="video/mp4">
+                <source src="video/v1.webm" type="video/webm">
+            </video>
+        </div>
+        <div class="galeri-video-card__footer">
+            <div class="galeri-video-card__info">
+                <strong>Social Activities Documentation</strong>
+                <span>Yayasan Trah Manshur — 2026</span>
+            </div>
+            <div class="galeri-video-card__play-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+        </div>
+    </div>
+    <div class="galeri-video-card reveal reveal-delay-1">
+        <div class="galeri-video-card__label-bar">
+            <span class="galeri-video-card__num">02</span>
+            <span class="galeri-video-card__tag">📹 Activities</span>
+        </div>
+        <div class="video-wrap">
+            <video width="640" height="360" controls>
+                <source src="video/v2.mp4" type="video/mp4">
+                <source src="video/v2.webm" type="video/webm">
+            </video>
+        </div>
+        <div class="galeri-video-card__footer">
+            <div class="galeri-video-card__info">
+                <strong>Community Service Activity</strong>
+                <span>Yayasan Trah Manshur — 2026</span>
+            </div>
+            <div class="galeri-video-card__play-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+        </div>
+         </div>
+    </div>
     </div>
 </section>
 
@@ -245,7 +306,7 @@
                     <div class="kontak__item">
                         <div>
                             <div class="kontak__item-label">Bank Account</div>
-                            <div class="kontak__item-value">-</div>
+                            <div class="kontak__item-value">BJB KCP BOJONG GEDE: 0104330398100</div>
                         </div>
                     </div>
                 </div>
