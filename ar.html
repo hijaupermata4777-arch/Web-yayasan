@@ -3,84 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="مؤسسة تراه منصور - مقترح رقمي لتمكين المجتمع والخدمة العامة">
-    <title>مؤسسة تراه منصور — المقترح الرقمي 2026</title>
+    <meta name="description" content="يايسان تراه مانشور - مقترح رقمي لتمكين المجتمع والخدمة العامة">
+    <title>يايسان تراه مانشور — المقترح الرقمي 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-        body { font-family: 'DM Sans', sans-serif; }
-        h1, h2, .nav__logo { font-family: 'Playfair Display', serif; }
-
-        /* Fix: tombol slider untuk halaman RTL — posisi TIDAK dibalik */
-        .ar-slider-wrapper {
-            position: relative;
-            width: 100%;
-        }
-        .ar-slider-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: rgba(212, 175, 55, 0.9);
-            color: #000;
-            border: none;
-            cursor: pointer;
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-        .ar-slider-btn:hover {
-            background: #fff;
-            transform: translateY(-50%) scale(1.1);
-        }
-        /* في RTL: زر "السابق" يجب أن يكون على اليمين لأن الاتجاه معكوس */
-        .ar-slider-btn.ar-prev { right: -10px; }
-        .ar-slider-btn.ar-next { left: -10px; }
-
-        @media (max-width: 480px) {
-            .ar-slider-btn { display: none; }
-        }
-    </style>
 </head>
 <body>
 
+<!-- ═══════════ التنقل ═══════════ -->
 <nav class="nav" id="mainNav">
-    <div class="nav__logo">تراه <span>منصور</span></div>
+    <div class="nav__logo">تراه <span>مانشور</span></div>
     <ul class="nav__links">
-        <li><a href="#tentang">من نحن</a></li>
+        <li><a href="#tentang">عن المؤسسة</a></li>
         <li><a href="#video-profil">الملف التعريفي</a></li>
         <li><a href="#galeri">المعرض</a></li>
         <li><a href="#download">تحميل</a></li>
         <li><a href="#kontak">اتصل بنا</a></li>
-      <li class="nav__lang">
-        <a href="index.html" class="active">ID</a>
-        <span class="sep">·</span>
-        <a href="en.html">EN</a>
-        <span class="sep">·</span>
-        <a href="ar.html">AR</a>
-        <span class="sep">·</span>
-        <a href="ja.html">JA</a>
-        <span class="sep">·</span>
-        <a href="nl.html">NL</a>
-    </li>
+        <li class="nav__lang">
+            <a href="index.html">ID</a>
+            <span class="sep">·</span>
+            <a href="en.html">EN</a>
+            <span class="sep">·</span>
+            <a href="ar.html" class="active">AR</a>
+            <span class="sep">·</span>
+            <a href="ja.html">JA</a>
+            <span class="sep">·</span>
+            <a href="nl.html">NL</a>
+        </li>
     </ul>
 </nav>
 
+<!-- ═══════════ الواجهة الرئيسية ═══════════ -->
 <div class="hero">
     <div class="hero__bg"></div>
     <div class="hero__vignette"></div>
     <div class="hero__line"></div>
     <div class="hero__content">
         <span class="hero__badge">المقترح الرقمي 2026</span>
-        <h1 class="hero__title">بناء المستقبل<br><em>مع تراه منصور</em></h1>
-        <p class="hero__subtitle">مقترح لتمكين المجتمع والخدمة العامة لخلق تأثير حقيقي للآخرين — مستدام، وملموس، وذو مغزى.</p>
+        <h1 class="hero__title">نبني المستقبل<br><em>معاً مع تراه مانشور</em></h1>
+        <p class="hero__subtitle">مقترح تمكين المجتمع والخدمة العامة لإحداث أثر حقيقي للآخرين — مستدام وقابل للقياس وذو معنى عميق.</p>
         <div class="hero__actions">
             <a href="#tentang" class="btn-gold">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
@@ -88,116 +51,115 @@
             </a>
             <a href="#download" class="btn-outline">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
-                تحميل الملف PDF
+                تحميل المقترح PDF
             </a>
         </div>
     </div>
     <div class="hero__scroll">
-        التمرير
+        مرر للأسفل
         <div class="hero__scroll-line"></div>
     </div>
 </div>
 
+<!-- ═══════════ عن المؤسسة ═══════════ -->
 <section id="tentang" class="section section--white">
     <div class="container">
         <div class="about-layout">
             <div class="about__text reveal">
-                <span class="about__eyebrow">من نحن</span>
-                <h2 class="about__title">تبرعك يمكن أن <em>يغير حياة</em></h2>
+                <span class="about__eyebrow">عن المؤسسة</span>
+                <h2 class="about__title">كل روبية تتبرع بها، <em>تغير حياة</em></h2>
                 <div class="about__body">
-                    <p>في القرى النائية — بعيدة عن المرافق اللائقة، بعيدة عن الاهتمام — لا يزال كثير من إخواننا يكافحون فقط للحصول على مياه نظيفة وتعليم أساسي وأمل. <strong>مؤسسة تراه منصور موجودة لتكون الجسر بين تعاطفك وأولئك الذين يحتاجون إليه أكثر من غيرهم.</strong></p>
-                    <p>هذه ليست مجرد مساعدة لحظية. نحن نبني برامج مستدامة في المجالات الاجتماعية والتعليمية والدينية — قابلة للقياس وشفافة وذات تأثير حقيقي. مع مئات المستفيدين عبر 3 قرى، نُثبت أن <em>التعاطف الجماعي يمكنه قيادة تغيير هائل.</em></p>
+                    <p>في القرى النائية — بعيداً عن المرافق اللائقة وبعيداً عن الاهتمام — لا يزال كثير من إخواننا يكافحون فقط من أجل الحصول على مياه نظيفة وتعليم أساسي وأمل. <strong>يايسان تراه مانشور هنا لتكون جسراً بين تعاطفكم وأولئك الأكثر احتياجاً.</strong></p>
+                    <p>ليست مجرد مساعدة مؤقتة. نحن نبني برامج مستدامة في المجالات الاجتماعية والتعليمية والدينية — قابلة للقياس وشفافة وذات أثر حقيقي. مع مئات المستفيدين في 3 قرى، نُثبت أن <em>الرعاية الجماعية يمكنها أن تُحرّك تغييراً عظيماً.</em></p>
                     <p>انضم إلينا. تبرع. كن جزءاً من قصة التغيير هذه — لأن فعلاً واحداً منك اليوم يمكن أن يكون نوراً لكثير من الأسر غداً.</p>
                 </div>
             </div>
             <div class="about__visual reveal reveal-delay-2">
                 <div class="about__ring"></div>
                 <div class="about__img-wrap">
-                    <img src="image/foto1.jpeg" alt="نشاطات مؤسسة تراه منصور" loading="lazy">
+                    <img src="image/foto1.jpeg" alt="أنشطة يايسان تراه مانشور" loading="lazy">
                 </div>
             </div>
         </div>
     </div>
 </section>
 
+<!-- ═══════════ فيديو الملف التعريفي ═══════════ -->
 <section id="video-profil" class="section section--dark">
     <div class="container">
         <div class="sec-header reveal">
-            <span class="sec-eyebrow">الأوضاع الميدانية</span>
-            <h2 class="sec-title">ضرورة <em>مهمتنا</em></h2>
+            <span class="sec-eyebrow">أوضاع الميدان</span>
+            <h2 class="sec-title">إلحاحية <em>مهمتنا</em></h2>
             <div class="sec-divider"></div>
         </div>
 
-        <!-- 
-            FIX: Wrapper khusus AR agar tombol tidak ikut RTL flip.
-            Slider konten tetap dir="ltr" supaya scroll YouTube normal.
-        -->
-        <div class="ar-slider-wrapper">
-            <!-- زر السابق: في RTL يجب أن يكون على اليمين -->
-            <button class="ar-slider-btn ar-prev" id="slidePrevAr" aria-label="السابق">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
-            </button>
-            <!-- زر التالي: في RTL يجب أن يكون على اليسار -->
-            <button class="ar-slider-btn ar-next" id="slideNextAr" aria-label="التالي">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
-            </button>
+        <div class="video-slider-wrapper">
+            <div class="video-slider-container">
+                <button class="slider-btn prev" id="slidePrev" aria-label="السابق">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+                </button>
+                <button class="slider-btn next" id="slideNext" aria-label="التالي">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
 
-            <div class="video-slider" id="videoSliderAr" dir="ltr">
-                <div class="video-slider__track">
-                    <div class="video-card">
-                        <div class="video-wrap">
-                            <iframe src="https://www.youtube.com/embed/qf60KJDmAho"
-                                title="مؤسسة تراه منصور - فيديو الملف التعريفي"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen loading="lazy"></iframe>
+                <div class="video-slider" id="videoSlider">
+                    <div class="video-slider__track">
+                        <div class="video-card">
+                            <div class="video-wrap">
+                                <iframe src="https://www.youtube.com/embed/qf60KJDmAho"
+                                    title="فيديو ملف تراه مانشور التعريفي"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen loading="lazy"></iframe>
+                            </div>
                         </div>
-                    </div>
-                    <div class="video-card">
-                        <div class="video-wrap">
-                            <iframe src="https://www.youtube.com/embed/LDbUK9trMSY"
-                                title="مؤسسة تراه منصور - النشاط 2"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen loading="lazy"></iframe>
+                        <div class="video-card">
+                            <div class="video-wrap">
+                                <iframe src="https://www.youtube.com/embed/LDbUK9trMSY"
+                                    title="يايسان تراه مانشور - النشاط 2"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen loading="lazy"></iframe>
+                            </div>
                         </div>
-                    </div>
-                    <div class="video-card">
-                        <div class="video-wrap">
-                            <iframe src="https://www.youtube.com/embed/DxXKSx2XDOM"
-                                title="مؤسسة تراه منصور - النشاط 3"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen loading="lazy"></iframe>
+                        <div class="video-card">
+                            <div class="video-wrap">
+                                <iframe src="https://www.youtube.com/embed/DxXKSx2XDOM"
+                                    title="يايسان تراه مانشور - النشاط 3"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen loading="lazy"></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 </section>
 
-<!-- ═══════════ GALERI ═══════════ -->
+<!-- ═══════════ المعرض ═══════════ -->
 <section id="galeri" class="section section--cream">
     <div class="container">
         <div class="sec-header reveal">
-            <span class="sec-eyebrow">التوثيق</span>
+            <span class="sec-eyebrow">توثيق</span>
             <h2 class="sec-title">معرض <em>الأنشطة</em></h2>
             <div class="sec-divider"></div>
-            <p class="sec-desc">لحظات من العمل الفعلي للمتطوعين وابتسامات المستفيدين من مؤسسة تراه منصور.</p>
+            <p class="sec-desc">لحظات من الأفعال الحقيقية للمتطوعين وابتسامات المستفيدين من يايسان تراه مانشور.</p>
         </div>
 
-        <!-- TAB TOGGLE -->
+        <!-- تبديل التبويب -->
         <div class="galeri-tabs reveal">
             <button class="galeri-tab active" data-tab="foto">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-                الصور
+                صور
             </button>
             <button class="galeri-tab" data-tab="video">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-                الفيديوهات
+                فيديوهات
             </button>
         </div>
 
-        <!-- PHOTO GRID -->
-        <div class="galeri-grid reveal" id="galeriPhoto">
+        <!-- شبكة الصور -->
+        <div class="galeri-grid" id="galeriPhoto">
             <div class="galeri-item" data-src="image/foto1.jpeg" data-caption="توثيق النشاط 1">
                 <img src="image/foto1.jpeg" alt="توثيق 1" loading="lazy">
                 <div class="galeri-item__zoom">
@@ -248,70 +210,66 @@
             </div>
         </div>
 
-        <!-- VIDEO GRID -->
-        <div class="galeri-video-grid" id="galeriVideo" style="display:none;">
-    <div class="galeri-video-card reveal">
-        <div class="galeri-video-card__label-bar">
-            <span class="galeri-video-card__num">٠١</span>
-            <span class="galeri-video-card__tag">📹 الأنشطة</span>
-        </div>
-        <div class="video-wrap">
-            <video width="640" height="360" controls>
-                <source src="video/v1.mp4" type="video/mp4">
-                <source src="video/v1.webm" type="video/webm">
-            </video>
-        </div>
-        <div class="galeri-video-card__footer">
-            <div class="galeri-video-card__info">
-                <strong>توثيق الأنشطة الاجتماعية</strong>
-                <span>يايسان تراه مانشور — ٢٠٢٦</span>
+        <div class="galeri-video-grid galeri-panel" id="galeriVideo" aria-hidden="true">
+            <div class="galeri-video-card">
+                <div class="galeri-video-card__label-bar">
+                    <span class="galeri-video-card__num">01</span>
+                    <span class="galeri-video-card__tag">📹 نشاط</span>
+                </div>
+                <div class="video-wrap">
+                    <video width="640" height="360" controls preload="none">
+                        <source src="video/v1.mp4" type="video/mp4">
+                        <source src="video/v1.webm" type="video/webm">
+                    </video>
+                </div>
+                <div class="galeri-video-card__footer">
+                    <div class="galeri-video-card__info">
+                        <strong>توثيق النشاط الاجتماعي</strong>
+                        <span>يايسان تراه مانشور — 2026</span>
+                    </div>
+                    <div class="galeri-video-card__play-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </div>
+                </div>
             </div>
-            <div class="galeri-video-card__play-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <div class="galeri-video-card">
+                <div class="galeri-video-card__label-bar">
+                    <span class="galeri-video-card__num">02</span>
+                    <span class="galeri-video-card__tag">📹 نشاط</span>
+                </div>
+                <div class="video-wrap">
+                    <video width="640" height="360" controls preload="none">
+                        <source src="video/v2.mp4" type="video/mp4">
+                        <source src="video/v2.webm" type="video/webm">
+                    </video>
+                </div>
+                <div class="galeri-video-card__footer">
+                    <div class="galeri-video-card__info">
+                        <strong>نشاط خدمة المجتمع</strong>
+                        <span>يايسان تراه مانشور — 2026</span>
+                    </div>
+                    <div class="galeri-video-card__play-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="galeri-video-card reveal reveal-delay-1">
-        <div class="galeri-video-card__label-bar">
-            <span class="galeri-video-card__num">٠٢</span>
-            <span class="galeri-video-card__tag">📹 الأنشطة</span>
-        </div>
-        <div class="video-wrap">
-            <video width="640" height="360" controls>
-                <source src="video/v2.mp4" type="video/mp4">
-                <source src="video/v2.webm" type="video/webm">
-            </video>
-        </div>
-        <div class="galeri-video-card__footer">
-            <div class="galeri-video-card__info">
-                <strong>نشاط خدمة المجتمع</strong>
-                <span>يايسان تراه مانشور — ٢٠٢٦</span>
-            </div>
-            <div class="galeri-video-card__play-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            </div>
-        </div>
-    </div>
-</div>
     </div>
 </section>
 
-<!-- ═══════════ LIGHTBOX MODAL ═══════════ -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="صورة مكبرة">
+<!-- ═══════════ لايتبوكس ═══════════ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="صورة مكبّرة">
     <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
-
     <button class="lightbox__close" id="lightboxClose" aria-label="إغلاق">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <path d="M18 6 6 18M6 6l12 12"/>
         </svg>
     </button>
-
     <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="الصورة السابقة">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <path d="m15 18-6-6 6-6"/>
         </svg>
     </button>
-
     <div class="lightbox__stage">
         <div class="lightbox__img-wrap" id="lightboxImgWrap">
             <img class="lightbox__img" id="lightboxImg" src="" alt="">
@@ -319,7 +277,6 @@
         <div class="lightbox__caption" id="lightboxCaption"></div>
         <div class="lightbox__counter" id="lightboxCounter"></div>
     </div>
-
     <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="الصورة التالية">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <path d="m9 18 6-6-6-6"/>
@@ -327,65 +284,83 @@
     </button>
 </div>
 
+<!-- ═══════════ تحميل PDF ═══════════ -->
 <section id="download" class="download-section">
     <div class="download-section__deco">PDF</div>
     <div style="position:relative;z-index:2;max-width:1160px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem);">
         <div class="sec-header reveal">
-            <span class="sec-eyebrow">تحميل المستندات</span>
-            <h2 class="sec-title">المستندات الرسمية <em>للمؤسسة</em></h2>
+            <span class="sec-eyebrow">تحميل الوثائق</span>
+            <h2 class="sec-title">الوثائق الرسمية <em>للمؤسسة</em></h2>
             <div class="sec-divider"></div>
-            <p class="sec-desc">جميع المستندات متاحة مجانًا، دون الحاجة للتسجيل. يرجى مشاركتها مع الشركاء والمانحين وأصحاب المصلحة.</p>
+            <p class="sec-desc">جميع الوثائق متاحة مجاناً دون تسجيل. يرجى مشاركتها مع الشركاء والمانحين وأصحاب المصلحة.</p>
         </div>
         <div class="pdf-multi-grid reveal reveal-delay-1" id="pdfGrid"></div>
     </div>
 </section>
 
+<!-- ═══════════ اتصل بنا ═══════════ -->
 <section id="kontak" class="section section--white">
     <div class="container">
         <div class="kontak-layout">
             <div class="reveal">
-                <span class="collab-pill">🤝 لنبدأ التعاون</span>
-                <h2 class="kontak__title">معاً يمكننا تقديم <em>المزيد</em></h2>
-                <p class="kontak__desc">هل أنت مهتم بالتعاون أو التطوع أو دعم مؤسستنا؟ أبوابنا مفتوحة دائماً لمن يريد إحداث تأثير حقيقي.</p>
+                <span class="collab-pill">🤝 لنتعاون معاً</span>
+                <h2 class="kontak__title">معاً نستطيع أن نفعل <em>أكثر</em></h2>
+                <p class="kontak__desc">هل أنت مهتم بالتعاون أو التطوع أو دعم مؤسستنا؟ أبوابنا مفتوحة دائماً لمن يريد إحداث فرق حقيقي.</p>
                 <div class="kontak__items">
                     <div class="kontak__item">
+                        <div class="kontak__item-icon">✉️</div>
                         <div>
                             <div class="kontak__item-label">البريد الإلكتروني</div>
                             <div class="kontak__item-value">Trahmanshur@gmail.com</div>
                         </div>
                     </div>
                     <div class="kontak__item">
+                        <div class="kontak__item-icon">📱</div>
                         <div>
-                            <div class="kontak__item-label">واتساب / الهاتف</div>
-                            <div class="kontak__item-value" dir="ltr">+62 811-1193-55</div>
-                            <div class="kontak__item-value" dir="ltr">+62 817-1087-17</div>
-                            <div class="kontak__item-value" dir="ltr">+62 899-4641-111</div>
+                            <div class="kontak__item-label">واتساب / هاتف</div>
+                            <div class="kontak__item-value">+62 811-1193-55</div>
+                            <div class="kontak__item-value">+62 817-1087-17</div>
+                            <div class="kontak__item-value">+62 899-4641-111</div>
                         </div>
                     </div>
                     <div class="kontak__item">
+                        <div class="kontak__item-icon">🏦</div>
                         <div>
-                            <div class="kontak__item-label">رقم الحساب البنكي</div>
-                            <div class="kontak__item-value" dir="ltr">BJB KCP BOJONG GEDE: 0104330398100</div>
+                            <div class="kontak__item-label">الحساب البنكي</div>
+                            <div class="kontak__item-value">BJB KCP BOJONG GEDE: 0104330398100</div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="kontak__map reveal reveal-delay-2">
-                <div class="kontak__map-icon">🌿</div>
-                <div class="kontak__map-text">
-                    <strong>مؤسسة تراه منصور</strong>
-                    نحن هنا لتقديم تأثير إيجابي للمجتمع. انضم إلينا في رحلة العطاء ذات المعنى.
-                </div>
-                <a href="mailto:Trahmanshur@gmail.com" class="btn-gold" style="margin-top:1rem; font-size:0.85rem; padding: 0.75rem 1.75rem;">
-                    ارسل رسالة
+                <a href="mailto:Trahmanshur@gmail.com" class="btn-gold" style="margin-top:2rem; font-size:0.85rem; padding:0.75rem 1.75rem; display:inline-flex;">
+                    أرسل رسالة
                 </a>
+            </div>
+
+            <div class="kontak__map-wrap reveal reveal-delay-2">
+                <div class="kontak__map-label">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    منطقة الخدمة — بوجونج جيدي، بوغور
+                </div>
+                <div class="kontak__map-frame">
+                    <iframe
+                        src="https://maps.app.goo.gl/VexPEZThVP9hTF1K7"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="موقع يايسان تراه مانشور — بوجونج جيدي، بوغور">
+                    </iframe>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
+<!-- ═══════════ التذييل ═══════════ -->
 <footer class="footer">
-    <p>&copy; 2026 <strong>مؤسسة تراه منصور</strong> · جميع الحقوق محفوظة · صنع بـ <span class="footer__gold">♥</span> من أجل الآخرين</p>
+    <p>&copy; 2026 <strong>يايسان تراه مانشور</strong> · جميع الحقوق محفوظة · صُنع بـ <span class="footer__gold">♥</span> للآخرين</p>
 </footer>
 
 <script src="script.js"></script>
