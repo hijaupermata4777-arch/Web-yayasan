@@ -1442,3 +1442,28 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
         animation: none !important;
     }
 }
+
+/* Kontainer luar untuk peta */
+.kontak__map-frame {
+    width: 100%;            /* Memenuhi lebar area kontak */
+    max-width: 100%;        /* Memastikan tidak meluber keluar */
+    display: flex;
+    justify-content: center; /* Posisi di tengah */
+    margin-top: 15px;
+}
+
+/* Pengaturan utama iframe peta agar seperti tampilan HP */
+.peta-responsif {
+    width: 100%;            /* Lebar mengikuti layar (bagus untuk HP) */
+    height: 300px;          /* Tinggi yang pas untuk layar ponsel */
+    border-radius: 15px;    /* Membuat sudut melengkung agar modern */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Memberi sedikit bayangan */
+}
+
+/* Penyesuaian khusus untuk layar yang sangat kecil */
+@media (max-width: 480px) {
+    .peta-responsif {
+        height: 250px;      /* Sedikit lebih pendek di HP kecil agar tidak makan tempat */
+    }
+}
+
