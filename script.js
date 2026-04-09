@@ -3,26 +3,50 @@
 
     /* ══════════ 1. NAVBAR ══════════ */
     var nav = document.getElementById('mainNav');
-    window.addEventListener('scroll', function () {
-        nav.classList.toggle('scrolled', window.scrollY > 60);
-    }, { passive: true });
+    if (nav) {
+        window.addEventListener('scroll', function () {
+            nav.classList.toggle('scrolled', window.scrollY > 60);
+        }, { passive: true });
+    }
 
     /* ══════════ 2. SCROLL REVEAL ══════════ */
+    var revealObs = null;
+
+    function observeEl(el) {
+        if (revealObs) {
+            revealObs.observe(el);
+        } else {
+            el.classList.add('visible');
+        }
+    }
+
     var reveals = document.querySelectorAll('.reveal');
-    var revealObs;
     if ('IntersectionObserver' in window) {
         revealObs = new IntersectionObserver(function (entries) {
             entries.forEach(function (e) {
-                if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    revealObs.unobserve(e.target);
+                }
             });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
         reveals.forEach(function (el) { revealObs.observe(el); });
     } else {
         reveals.forEach(function (el) { el.classList.add('visible'); });
     }
 
-    /* ══════════ 3. GALERI TAB TOGGLE ══════════ */
-    var tabs        = document.querySelectorAll('.galeri-tab');
+    /* ══════════ 3. GALERI TAB TOGGLE ══════════
+     *
+     *  FIX: Gunakan CSS class .galeri-panel--hidden alih-alih toggle
+     *       display:none/grid langsung. Ini mencegah layout thrashing
+     *       dan memastikan IntersectionObserver bisa mendeteksi elemen
+     *       dengan benar saat panel menjadi visible.
+     *
+     *  FIX: requestAnimationFrame sebelum observe agar browser selesai
+     *       paint ulang layout sebelum observer dihitung.
+    ══════════ */
+  var tabs        = document.querySelectorAll('.galeri-tab');
     var galeriPhoto = document.getElementById('galeriPhoto');
     var galeriVideo = document.getElementById('galeriVideo');
 
@@ -58,83 +82,97 @@
     }
 
     /* ══════════ 4. LIGHTBOX ══════════ */
-    var lightbox   = document.getElementById('lightbox');
-    var lbBackdrop = document.getElementById('lightboxBackdrop');
-    var lbClose    = document.getElementById('lightboxClose');
-    var lbPrev     = document.getElementById('lightboxPrev');
-    var lbNext     = document.getElementById('lightboxNext');
-    var lbImgWrap  = document.getElementById('lightboxImgWrap');
-    var lbImg      = document.getElementById('lightboxImg');
-    var lbCaption  = document.getElementById('lightboxCaption');
-    var lbCounter  = document.getElementById('lightboxCounter');
+    var lightbox    = document.getElementById('lightbox');
+    var lbBackdrop  = document.getElementById('lightboxBackdrop');
+    var lbClose     = document.getElementById('lightboxClose');
+    var lbPrev      = document.getElementById('lightboxPrev');
+    var lbNext      = document.getElementById('lightboxNext');
+    var lbImgWrap   = document.getElementById('lightboxImgWrap');
+    var lbImg       = document.getElementById('lightboxImg');
+    var lbCaption   = document.getElementById('lightboxCaption');
+    var lbCounter   = document.getElementById('lightboxCounter');
     var galeriItems = Array.from(document.querySelectorAll('.galeri-item'));
-    var currentIndex = 0, isAnimating = false;
+    var currentIndex = 0;
+    var isAnimating  = false;
 
     function openLightbox(index) {
         currentIndex = index;
-        var item = galeriItems[index];
-        var src = item.getAttribute('data-src') || item.querySelector('img').src;
+        var item    = galeriItems[index];
+        var src     = item.getAttribute('data-src') || item.querySelector('img').src;
         var caption = item.getAttribute('data-caption') || item.querySelector('img').alt || '';
-        lbImg.src = src; lbImg.alt = caption;
+        lbImg.src           = src;
+        lbImg.alt           = caption;
         lbCaption.textContent = caption;
         lbCounter.textContent = (index + 1) + ' / ' + galeriItems.length;
         lightbox.classList.add('open');
         document.body.style.overflow = 'hidden';
-        setTimeout(function () { lbClose.focus(); }, 50);
+        setTimeout(function () { lbClose && lbClose.focus(); }, 50);
     }
+
     function closeLightbox() {
         lightbox.classList.remove('open');
         document.body.style.overflow = '';
         lbImg.src = '';
     }
+
     function goTo(index) {
         if (isAnimating) return;
         index = ((index % galeriItems.length) + galeriItems.length) % galeriItems.length;
         if (index === currentIndex) return;
         isAnimating = true;
         lbImgWrap.classList.add('swapping');
-        var item = galeriItems[index];
-        var src = item.getAttribute('data-src') || item.querySelector('img').src;
+        var item    = galeriItems[index];
+        var src     = item.getAttribute('data-src') || item.querySelector('img').src;
         var caption = item.getAttribute('data-caption') || item.querySelector('img').alt || '';
         setTimeout(function () {
-            lbImg.src = src; lbImg.alt = caption;
+            lbImg.src             = src;
+            lbImg.alt             = caption;
             lbCaption.textContent = caption;
             lbCounter.textContent = (index + 1) + ' / ' + galeriItems.length;
             currentIndex = index;
         }, 120);
-        setTimeout(function () { lbImgWrap.classList.remove('swapping'); isAnimating = false; }, 260);
+        setTimeout(function () {
+            lbImgWrap.classList.remove('swapping');
+            isAnimating = false;
+        }, 260);
     }
+
     if (lightbox) {
-        galeriItems.forEach(function (item, i) { item.addEventListener('click', function () { openLightbox(i); }); });
-        lbClose.addEventListener('click', closeLightbox);
-        lbBackdrop.addEventListener('click', closeLightbox);
-        lbPrev.addEventListener('click', function () { goTo(currentIndex - 1); });
-        lbNext.addEventListener('click', function () { goTo(currentIndex + 1); });
+        galeriItems.forEach(function (item, i) {
+            item.addEventListener('click', function () { openLightbox(i); });
+        });
+        lbClose   && lbClose.addEventListener('click', closeLightbox);
+        lbBackdrop && lbBackdrop.addEventListener('click', closeLightbox);
+        lbPrev    && lbPrev.addEventListener('click', function () { goTo(currentIndex - 1); });
+        lbNext    && lbNext.addEventListener('click', function () { goTo(currentIndex + 1); });
+
         document.addEventListener('keydown', function (e) {
             if (!lightbox.classList.contains('open')) return;
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft') goTo(currentIndex - 1);
-            if (e.key === 'ArrowRight') goTo(currentIndex + 1);
+            if (e.key === 'Escape')      closeLightbox();
+            if (e.key === 'ArrowLeft')   goTo(currentIndex - 1);
+            if (e.key === 'ArrowRight')  goTo(currentIndex + 1);
         });
-        var touchStartX = 0, touchEndX = 0;
-        lightbox.addEventListener('touchstart', function (e) { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+
+        var touchStartX = 0;
+        lightbox.addEventListener('touchstart', function (e) {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
         lightbox.addEventListener('touchend', function (e) {
-            touchEndX = e.changedTouches[0].screenX;
-            var diff = touchStartX - touchEndX;
-            if (Math.abs(diff) >= 50) { if (diff > 0) goTo(currentIndex + 1); else goTo(currentIndex - 1); }
+            var diff = touchStartX - e.changedTouches[0].screenX;
+            if (Math.abs(diff) >= 50) { diff > 0 ? goTo(currentIndex + 1) : goTo(currentIndex - 1); }
         }, { passive: true });
     }
 
     /* ══════════ 5. MULTI-PDF DOWNLOAD ══════════ */
     var PDF_DOCS = [
         {
-            name: 'rencana layanan 3 desa (Cinangka, bj jengkol, Tegalwaru)',
+            name: 'Rencana Layanan 3 Desa (Cinangka, Bojong Jengkol, Tegalwaru)',
             file: 'pdf/rencana layanan 3 desa (Cinangka, bj jengkol, Tegalwaru).pdf',
-            download: 'Proposal-Tran-Mahsur-2026.pdf',
-            tag: 'PDF',
+            download: 'Proposal-Trah-Manshur-2026.pdf',
+            tag: 'PDF'
         },
         {
-            name: 'akta notaris Yay trah manshur',
+            name: 'Akta Notaris Yayasan Trah Manshur',
             file: 'pdf/akta notaris Yay trah manshur.pdf',
             download: 'akta notaris Yay trah manshur.pdf',
             tag: 'PDF'
@@ -144,7 +182,7 @@
             file: 'pdf/المستلمين مساعدة ماء نظيف (AutoRecovered).pdf',
             download: 'المستلمين مساعدة ماء نظيف.pdf',
             tag: 'PDF'
-        },
+        }
     ];
 
     var grid = document.getElementById('pdfGrid');
@@ -161,11 +199,10 @@
                         '<line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/>' +
                         '</svg>' +
                     '</div>' +
-                    '<span class="pdf-item-card__tag' + (doc.tagNew ? ' tag-new' : '') + '">' + doc.tag + '</span>' +
+                    '<span class="pdf-item-card__tag">' + doc.tag + '</span>' +
                 '</div>' +
                 '<div>' +
                     '<div class="pdf-item-card__name">' + doc.name + '</div>' +
-                    '<div class="pdf-item-card__meta">' + (doc.meta || '') + '</div>' +
                 '</div>' +
                 '<div class="pdf-item-card__progress" id="prog-' + i + '">' +
                     '<div class="pdf-item-card__progress-bar" id="bar-' + i + '"></div>' +
@@ -183,18 +220,15 @@
             });
         });
 
-        if (revealObs) {
-            grid.querySelectorAll('.reveal').forEach(function (el) { revealObs.observe(el); });
-        } else {
-            grid.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible'); });
-        }
+        // Observe kartu PDF yang baru dibuat
+        grid.querySelectorAll('.reveal').forEach(function (el) { observeEl(el); });
     }
 
     function handlePdfDownload(i, doc) {
         var btn  = document.getElementById('dlbtn-' + i);
         var prog = document.getElementById('prog-' + i);
         var bar  = document.getElementById('bar-' + i);
-        if (btn.disabled) return;
+        if (!btn || btn.disabled) return;
         btn.disabled = true;
         btn.innerHTML = '<span>Mempersiapkan…</span>';
         prog.classList.add('show');
@@ -208,56 +242,60 @@
             clearInterval(iv);
             bar.style.width = '100%';
             var a = document.createElement('a');
-            a.href = doc.file;
+            a.href     = doc.file;
             a.download = doc.download;
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
-            btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><polyline points="20 6 9 17 4 12"/></svg> Diunduh';
+            btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><polyline points="20 6 9 17 4 12"/></svg> Diunduh';
             setTimeout(function () {
-                btn.disabled = false;
-                btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg> Unduh';
+                btn.disabled  = false;
+                btn.innerHTML =
+                    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px">' +
+                    '<path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/>' +
+                    '</svg> Unduh';
                 prog.classList.remove('show');
                 bar.style.width = '0%';
             }, 3000);
         }, 1600);
     }
 
-    /* ══════════ 6. VIDEO SLIDER — halaman ID/EN (id="videoSlider") ══════════ */
+    /* ══════════ 6. VIDEO SLIDER — halaman ID/EN ══════════
+     *
+     * FIX: Sekarang slider wrapper adalah .video-slider-wrapper (bukan
+     *      .video-slider), sehingga tidak ada konflik class CSS dengan
+     *      #videoSlider yang memang menggunakan overflow scroll.
+    ══════════ */
     var slider  = document.getElementById('videoSlider');
     var btnPrev = document.getElementById('slidePrev');
     var btnNext = document.getElementById('slideNext');
 
     if (slider && btnPrev && btnNext) {
+        function getCardWidth() {
+            var card = slider.querySelector('.video-card');
+            if (!card) return 320;
+            return card.offsetWidth + 20; // 20 = gap
+        }
+
         btnNext.addEventListener('click', function () {
-            var cardWidth = slider.querySelector('.video-card').offsetWidth + 20;
-            slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
+            slider.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
         });
-
         btnPrev.addEventListener('click', function () {
-            var cardWidth = slider.querySelector('.video-card').offsetWidth + 20;
-            slider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+            slider.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
         });
 
-        slider.addEventListener('scroll', function () {
+        function updateSliderBtns() {
             var scrollLeft = slider.scrollLeft;
             var maxScroll  = slider.scrollWidth - slider.clientWidth;
-            btnPrev.style.opacity = scrollLeft <= 0             ? '0.3' : '1';
-            btnNext.style.opacity = scrollLeft >= maxScroll - 5 ? '0.3' : '1';
-        }, { passive: true });
+            btnPrev.style.opacity = scrollLeft <= 2             ? '0.3' : '1';
+            btnNext.style.opacity = scrollLeft >= maxScroll - 2 ? '0.3' : '1';
+        }
 
-        btnPrev.style.opacity = '0.3';
+        slider.addEventListener('scroll', updateSliderBtns, { passive: true });
+        updateSliderBtns(); // inisialisasi state tombol
     }
 
-    /* ══════════ 7. VIDEO SLIDER — halaman AR (id="videoSliderAr") ══════════ */
-    /*
-        FIX RTL:
-        Dalam konteks RTL, scrollLeft di browser modern bisa bernilai negatif
-        atau terbalik. Kita selalu paksa scroll LTR normal karena slider 
-        menggunakan dir="ltr" secara eksplisit.
-        Tombol "السابق" (prev) ada di kanan → scroll ke KIRI (negatif/kurang)
-        Tombol "التالي" (next) ada di kiri  → scroll ke KANAN (positif/lebih)
-    */
+    /* ══════════ 7. VIDEO SLIDER — halaman AR ══════════ */
     var sliderAr  = document.getElementById('videoSliderAr');
     var btnPrevAr = document.getElementById('slidePrevAr');
     var btnNextAr = document.getElementById('slideNextAr');
@@ -267,24 +305,18 @@
             var card = sliderAr.querySelector('.video-card');
             return card ? card.offsetWidth + 20 : 320;
         }
-
-        // زر التالي (di kiri layar AR) → geser ke kanan (slide berikutnya)
         btnNextAr.addEventListener('click', function () {
             sliderAr.scrollBy({ left: getCardWidthAr(), behavior: 'smooth' });
         });
-
-        // زر السابق (di kanan layar AR) → geser ke kiri (slide sebelumnya)
         btnPrevAr.addEventListener('click', function () {
             sliderAr.scrollBy({ left: -getCardWidthAr(), behavior: 'smooth' });
         });
-
         sliderAr.addEventListener('scroll', function () {
-            var scrollLeft = Math.abs(sliderAr.scrollLeft); // abs untuk handle RTL negative scroll
+            var scrollLeft = Math.abs(sliderAr.scrollLeft);
             var maxScroll  = sliderAr.scrollWidth - sliderAr.clientWidth;
-            btnPrevAr.style.opacity = scrollLeft <= 0             ? '0.3' : '1';
-            btnNextAr.style.opacity = scrollLeft >= maxScroll - 5 ? '0.3' : '1';
+            btnPrevAr.style.opacity = scrollLeft <= 2             ? '0.3' : '1';
+            btnNextAr.style.opacity = scrollLeft >= maxScroll - 2 ? '0.3' : '1';
         }, { passive: true });
-
         btnPrevAr.style.opacity = '0.3';
     }
 
