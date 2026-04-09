@@ -93,8 +93,9 @@
             <div class="sec-divider"></div>
         </div>
 
-        <div class="video-slider">
-        <div class="video-slider-container">
+        <!-- FIX: outer wrapper pakai class berbeda agar tidak konflik dengan #videoSlider -->
+        <div class="video-slider-wrapper">
+            <div class="video-slider-container">
                 <button class="slider-btn prev" id="slidePrev" aria-label="Sebelumnya">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
                 </button>
@@ -102,38 +103,38 @@
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
                 </button>
 
+                <!-- FIX: hanya satu element dengan class video-slider, yaitu yang punya id -->
                 <div class="video-slider" id="videoSlider">
-            <div class="video-slider__track">
-                <div class="video-card">
-                    <div class="video-wrap">
-                        <iframe src="https://www.youtube.com/embed/qf60KJDmAho"
-                            title="Trah Manshur Foundation Profile Video"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen loading="lazy"></iframe>
-                    </div>
-                </div>
-                <div class="video-card">
-                    <div class="video-wrap">
-                        <iframe src="https://www.youtube.com/embed/LDbUK9trMSY"
-                            title="Trah Manshur Foundation - Kegiatan 2"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen loading="lazy"></iframe>
-                    </div>
-                </div>
-                <div class="video-card">
-                    <div class="video-wrap">
-                        <iframe src="https://www.youtube.com/embed/DxXKSx2XDOM"
-                            title="Trah Manshur Foundation - Kegiatan 3"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen loading="lazy"></iframe>
+                    <div class="video-slider__track">
+                        <div class="video-card">
+                            <div class="video-wrap">
+                                <iframe src="https://www.youtube.com/embed/qf60KJDmAho"
+                                    title="Trah Manshur Foundation Profile Video"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="video-card">
+                            <div class="video-wrap">
+                                <iframe src="https://www.youtube.com/embed/LDbUK9trMSY"
+                                    title="Trah Manshur Foundation - Kegiatan 2"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="video-card">
+                            <div class="video-wrap">
+                                <iframe src="https://www.youtube.com/embed/DxXKSx2XDOM"
+                                    title="Trah Manshur Foundation - Kegiatan 3"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen loading="lazy"></iframe>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-                </div>
-             </div>
-           
         </div>
-    
+
     </div>
 </section>
 
@@ -160,7 +161,7 @@
         </div>
 
         <!-- FOTO GRID -->
-        <div class="galeri-grid reveal" id="galeriPhoto">
+        <div class="galeri-grid" id="galeriPhoto">
             <div class="galeri-item" data-src="image/foto1.jpeg" data-caption="Dokumentasi Kegiatan 1">
                 <img src="image/foto1.jpeg" alt="Dokumentasi 1" loading="lazy">
                 <div class="galeri-item__zoom">
@@ -211,70 +212,67 @@
             </div>
         </div>
 
-        <!-- VIDEO GRID -->
-  <div class="galeri-video-grid" id="galeriVideo" style="display:none;">
-    <div class="galeri-video-card reveal">
-        <div class="galeri-video-card__label-bar">
-            <span class="galeri-video-card__num">01</span>
-            <span class="galeri-video-card__tag">📹 Kegiatan</span>
-        </div>
-        <div class="video-wrap">
-            <video width="640" height="360" controls>
-                <source src="video/v1.mp4" type="video/mp4">
-                <source src="video/v1.webm" type="video/webm">
-            </video>
-        </div>
-        <div class="galeri-video-card__footer">
-            <div class="galeri-video-card__info">
-                <strong>Dokumentasi Kegiatan Sosial</strong>
-                <span>Yayasan Trah Manshur — 2026</span>
+        <!-- VIDEO GRID — FIX: pakai visibility hidden + height:0 instead of display:none supaya tidak ngebug layout -->
+        <div class="galeri-video-grid" id="galeriVideo" style="display:none;">
+            <div class="galeri-video-card reveal">
+                <div class="galeri-video-card__label-bar">
+                    <span class="galeri-video-card__num">01</span>
+                    <span class="galeri-video-card__tag">📹 Kegiatan</span>
+                </div>
+                <div class="video-wrap">
+                    <video width="640" height="360" controls>
+                        <source src="video/v1.mp4" type="video/mp4">
+                        <source src="video/v1.webm" type="video/webm">
+                    </video>
+                </div>
+                <div class="galeri-video-card__footer">
+                    <div class="galeri-video-card__info">
+                        <strong>Dokumentasi Kegiatan Sosial</strong>
+                        <span>Yayasan Trah Manshur — 2026</span>
+                    </div>
+                    <div class="galeri-video-card__play-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </div>
+                </div>
             </div>
-            <div class="galeri-video-card__play-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <div class="galeri-video-card reveal reveal-delay-1">
+                <div class="galeri-video-card__label-bar">
+                    <span class="galeri-video-card__num">02</span>
+                    <span class="galeri-video-card__tag">📹 Kegiatan</span>
+                </div>
+                <div class="video-wrap">
+                    <video width="640" height="360" controls>
+                        <source src="video/v2.mp4" type="video/mp4">
+                        <source src="video/v2.webm" type="video/webm">
+                    </video>
+                </div>
+                <div class="galeri-video-card__footer">
+                    <div class="galeri-video-card__info">
+                        <strong>Kegiatan Pengabdian Masyarakat</strong>
+                        <span>Yayasan Trah Manshur — 2026</span>
+                    </div>
+                    <div class="galeri-video-card__play-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="galeri-video-card reveal reveal-delay-1">
-        <div class="galeri-video-card__label-bar">
-            <span class="galeri-video-card__num">02</span>
-            <span class="galeri-video-card__tag">📹 Kegiatan</span>
-        </div>
-        <div class="video-wrap">
-            <video width="640" height="360" controls>
-                <source src="video/v2.mp4" type="video/mp4">
-                <source src="video/v2.webm" type="video/webm">
-            </video>
-        </div>
-        <div class="galeri-video-card__footer">
-            <div class="galeri-video-card__info">
-                <strong>Kegiatan Pengabdian Masyarakat</strong>
-                <span>Yayasan Trah Manshur — 2026</span>
-            </div>
-            <div class="galeri-video-card__play-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            </div>
-        </div>
-    </div>
-</div>
-    </div>
+     </div> 
 </section>
 
 <!-- ═══════════ LIGHTBOX MODAL ═══════════ -->
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto diperbesar">
     <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
-
     <button class="lightbox__close" id="lightboxClose" aria-label="Tutup">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <path d="M18 6 6 18M6 6l12 12"/>
         </svg>
     </button>
-
     <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Foto sebelumnya">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <path d="m15 18-6-6 6-6"/>
         </svg>
     </button>
-
     <div class="lightbox__stage">
         <div class="lightbox__img-wrap" id="lightboxImgWrap">
             <img class="lightbox__img" id="lightboxImg" src="" alt="">
@@ -282,7 +280,6 @@
         <div class="lightbox__caption" id="lightboxCaption"></div>
         <div class="lightbox__counter" id="lightboxCounter"></div>
     </div>
-
     <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Foto berikutnya">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <path d="m9 18 6-6-6-6"/>
@@ -300,9 +297,7 @@
             <div class="sec-divider"></div>
             <p class="sec-desc">Semua dokumen tersedia gratis, tanpa registrasi. Silakan bagikan kepada mitra, donatur, dan pemangku kepentingan.</p>
         </div>
-        <div class="pdf-multi-grid reveal reveal-delay-1" id="pdfGrid">
-            <!-- Kartu dokumen diisi oleh JavaScript -->
-        </div>
+        <div class="pdf-multi-grid reveal reveal-delay-1" id="pdfGrid"></div>
     </div>
 </section>
 
@@ -310,18 +305,21 @@
 <section id="kontak" class="section section--white">
     <div class="container">
         <div class="kontak-layout">
+            <!-- Kolom kiri: info kontak -->
             <div class="reveal">
                 <span class="collab-pill">🤝 Mari Berkolaborasi</span>
                 <h2 class="kontak__title">Bersama Kita Bisa <em>Lebih Banyak</em></h2>
                 <p class="kontak__desc">Tertarik berkolaborasi, menjadi relawan, atau mendukung yayasan kami? Pintu kami selalu terbuka lebar untuk Anda yang ingin memberi dampak nyata.</p>
                 <div class="kontak__items">
                     <div class="kontak__item">
+                        <div class="kontak__item-icon"></div>
                         <div>
                             <div class="kontak__item-label">Email</div>
                             <div class="kontak__item-value">Trahmanshur@gmail.com</div>
                         </div>
                     </div>
                     <div class="kontak__item">
+                        <div class="kontak__item-icon"></div>
                         <div>
                             <div class="kontak__item-label">WhatsApp / Telepon</div>
                             <div class="kontak__item-value">+62 811-1193-55</div>
@@ -329,23 +327,38 @@
                             <div class="kontak__item-value">+62 899-4641-111</div>
                         </div>
                     </div>
-                     <div class="kontak__item">
+                    <div class="kontak__item">
+                        <div class="kontak__item-icon"></div>
                         <div>
                             <div class="kontak__item-label">Rekening Bank</div>
                             <div class="kontak__item-value">BJB KCP BOJONG GEDE: 0104330398100</div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="kontak__map reveal reveal-delay-2">
-                <div class="kontak__map-icon">🌿</div>
-                <div class="kontak__map-text">
-                    <strong>Yayasan Trah Manshur</strong>
-                    Hadir untuk memberikan dampak positif bagi masyarakat. Bergabunglah bersama kami dalam perjalanan memberi yang bermakna.
-                </div>
-                <a href="mailto:Trahmanshur@gmail.com" class="btn-gold" style="margin-top:1rem; font-size:0.85rem; padding: 0.75rem 1.75rem;">
+                <a href="mailto:Trahmanshur@gmail.com" class="btn-gold" style="margin-top:2rem; font-size:0.85rem; padding:0.75rem 1.75rem; display:inline-flex;">
                     Kirim Pesan
                 </a>
+            </div>
+
+            <!-- Kolom kanan: Google Maps embed -->
+           <div class="kontak__map-wrap reveal reveal-delay-2">
+                <div class="kontak__map-label">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Lokasi Kantor & Wilayah Layanan
+                </div>
+                
+                <div class="kontak__map-frame">
+                    <iframe
+                        src="https://maps.app.goo.gl/VexPEZThVP9hTF1K7"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Lokasi Yayasan Trah Manshur — Bojong Gede, Bogor">
+                    </iframe>
+                </div>
             </div>
         </div>
     </div>
