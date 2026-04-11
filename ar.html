@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="مؤسسة تراه منشور - مقترح رقمي لتمكين المجتمع وخدمته">
-    <title>مؤسسة تراه منشور — المقترح الرقمي 2026</title>
+    <meta name="description" content="يايسان تراه منشور - مقترح رقمي لتمكين المجتمع وخدمته">
+    <title>يايسان تراه منشور — المقترح الرقمي 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        body { font-family: 'Noto Naskh Arabic', 'DM Sans', serif; }
-        .nav__logo, .hero__title, .about__title, .sec-title, .kontak__title { font-family: 'Noto Naskh Arabic', serif; }
+        body { font-family: 'Cairo', sans-serif; }
+        .hero__title, .about__title, .sec-title, .kontak__title { font-family: 'Scheherazade New', serif; }
+        .nav__links { flex-direction: row-reverse; }
+        .about-layout { direction: rtl; }
+        .kontak-layout { direction: rtl; }
+        .kontak__items { direction: rtl; }
+        .galeri-tabs { direction: rtl; }
+        .hero__content { direction: rtl; text-align: right; }
+        .about__text { text-align: right; }
+        .sec-header { direction: rtl; }
+        .kontak__desc { text-align: right; }
+        .kontak__item { direction: rtl; }
+        .footer { direction: rtl; }
     </style>
 </head>
 <body>
@@ -20,11 +31,11 @@
 <nav class="nav" id="mainNav">
     <div class="nav__logo">تراه <span>منشور</span></div>
     <ul class="nav__links">
-        <li><a href="#tentang">من نحن</a></li>
+        <li><a href="#tentang">عن اليايسان</a></li>
         <li><a href="#video-profil">الملف</a></li>
         <li><a href="#galeri">المعرض</a></li>
         <li><a href="#hasil">النتائج</a></li>
-        <li><a href="#download">تنزيل</a></li>
+        <li><a href="#download">تحميل</a></li>
         <li><a href="#kontak">تواصل</a></li>
         <li class="nav__lang">
             <a href="index.html">ID</a>
@@ -40,45 +51,45 @@
     </ul>
 </nav>
 
-<!-- ═══════════ البطولة ═══════════ -->
+<!-- ═══════════ الصفحة الرئيسية ═══════════ -->
 <div class="hero">
     <div class="hero__bg"></div>
     <div class="hero__vignette"></div>
     <div class="hero__line"></div>
     <div class="hero__content">
         <span class="hero__badge">المقترح الرقمي 2026</span>
-        <h1 class="hero__title">بناء مستقبل أفضل<br><em>معاً مع تراه منشور</em></h1>
-        <p class="hero__subtitle">مقترح لتمكين المجتمع وخدمته من أجل إحداث أثر حقيقي للآخرين — مستدام، قابل للقياس، وذو معنى عميق.</p>
+        <h1 class="hero__title">نبني المستقبل<br><em>معاً مع تراه منشور</em></h1>
+        <p class="hero__subtitle">مقترح لتمكين المجتمع وخدمته من أجل إحداث أثر حقيقي للآخرين — مستدام، قابل للقياس، ومليء بالمعنى.</p>
         <div class="hero__actions">
             <a href="#tentang" class="btn-gold">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-                اعرف المزيد
+                اعرف أكثر
             </a>
         </div>
     </div>
     <div class="hero__scroll">
-        مرر
+        تمرير
         <div class="hero__scroll-line"></div>
     </div>
 </div>
 
-<!-- ═══════════ من نحن ═══════════ -->
+<!-- ═══════════ عن اليايسان ═══════════ -->
 <section id="tentang" class="section section--white">
     <div class="container">
         <div class="about-layout">
             <div class="about__text reveal">
-                <span class="about__eyebrow">من نحن</span>
-                <h2 class="about__title">كل روبية تتبرع بها، <em>تغير حياة</em></h2>
+                <span class="about__eyebrow">عن اليايسان</span>
+                <h2 class="about__title">كل روبية تتبرع بها، <em>تُغيّر حياة</em></h2>
                 <div class="about__body">
-                    <p>في القرى النائية — بعيداً عن المرافق اللائقة، بعيداً عن الاهتمام — لا يزال كثير من إخوتنا يكافحون فقط للحصول على مياه نظيفة وتعليم أساسي وأمل. <strong>جاءت مؤسسة تراه منشور لتكون الجسر بين تعاطفكم وأولئك الأشد حاجة.</strong></p>
-                    <p>ليست مجرد مساعدة مؤقتة. نحن نبني برامج مستدامة في المجالات الاجتماعية والتعليمية والدينية — قابلة للقياس، شفافة، وذات أثر حقيقي. مع مئات المستفيدين في 3 قرى، نثبت أن <em>التعاطف الجماعي قادر على إحداث تغيير كبير.</em></p>
-                    <p>انضم إلينا. تبرع. كن جزءاً من قصة التغيير هذه — لأن تصرفاً واحداً منك اليوم قد يكون نوراً لكثير من الأسر غداً.</p>
+                    <p>في القرى النائية — بعيداً عن المرافق اللائقة، بعيداً عن الاهتمام — لا يزال كثير من إخواننا وأخواتنا يكافحون فقط للحصول على مياه نظيفة وتعليم أساسي وأمل. <strong>يايسان تراه منشور موجودة لتكون جسراً بين تعاطفك وأولئك الأكثر احتياجاً.</strong></p>
+                    <p>ليس مجرد مساعدة مؤقتة. نبني برامج مستدامة في المجالات الاجتماعية والتعليمية والدينية — قابلة للقياس، شفافة، وذات أثر حقيقي. مع مئات المستفيدين في 3 قرى، نثبت أن <em>الرعاية الجماعية يمكنها إحداث تغيير عظيم.</em></p>
+                    <p>انضم إلينا. تبرع. كن جزءاً من قصة التحول هذه — لأن فعلاً واحداً منك اليوم يمكن أن يكون نوراً لكثير من العائلات غداً.</p>
                 </div>
             </div>
             <div class="about__visual reveal reveal-delay-2">
                 <div class="about__ring"></div>
                 <div class="about__img-wrap">
-                    <img src="image/foto1.jpeg" alt="أنشطة مؤسسة تراه منشور" loading="lazy">
+                    <img src="image/foto1.jpeg" alt="أنشطة يايسان تراه منشور" loading="lazy">
                 </div>
             </div>
         </div>
@@ -89,8 +100,8 @@
 <section id="video-profil" class="section section--dark">
     <div class="container">
         <div class="sec-header reveal">
-            <span class="sec-eyebrow">أوضاع الميدان</span>
-            <h2 class="sec-title">الإلحاحية في <em>مهمتنا</em></h2>
+            <span class="sec-eyebrow">الأوضاع الميدانية</span>
+            <h2 class="sec-title">إلحاحية <em>مهمتنا</em></h2>
             <div class="sec-divider"></div>
         </div>
 
@@ -108,7 +119,7 @@
                         <div class="video-card">
                             <div class="video-wrap">
                                 <iframe src="https://www.youtube.com/embed/qf60KJDmAho"
-                                    title="فيديو تعريفي لمؤسسة تراه منشور"
+                                    title="فيديو ملف يايسان تراه منشور"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowfullscreen loading="lazy"></iframe>
                             </div>
@@ -116,7 +127,7 @@
                         <div class="video-card">
                             <div class="video-wrap">
                                 <iframe src="https://www.youtube.com/embed/LDbUK9trMSY"
-                                    title="مؤسسة تراه منشور - نشاط 2"
+                                    title="يايسان تراه منشور - النشاط 2"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowfullscreen loading="lazy"></iframe>
                             </div>
@@ -124,7 +135,7 @@
                         <div class="video-card">
                             <div class="video-wrap">
                                 <iframe src="https://www.youtube.com/embed/DxXKSx2XDOM"
-                                    title="مؤسسة تراه منشور - نشاط 3"
+                                    title="يايسان تراه منشور - النشاط 3"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowfullscreen loading="lazy"></iframe>
                             </div>
@@ -143,7 +154,7 @@
             <span class="sec-eyebrow">توثيق</span>
             <h2 class="sec-title">معرض <em>الأنشطة</em></h2>
             <div class="sec-divider"></div>
-            <p class="sec-desc">لحظات من العمل الحقيقي للمتطوعين وابتسامات المستفيدين من مؤسسة تراه منشور.</p>
+            <p class="sec-desc">لحظات العمل الحقيقي للمتطوعين وابتسامات المستفيدين من يايسان تراه منشور.</p>
         </div>
 
         <div class="galeri-tabs reveal">
@@ -153,7 +164,7 @@
             </button>
             <button class="galeri-tab" data-tab="video">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-                فيديو
+                مقاطع فيديو
             </button>
         </div>
 
@@ -183,7 +194,7 @@
                 <div class="galeri-video-card__footer">
                     <div class="galeri-video-card__info">
                         <strong>توثيق النشاط الاجتماعي</strong>
-                        <span>مؤسسة تراه منشور — 2026</span>
+                        <span>يايسان تراه منشور — 2026</span>
                     </div>
                     <div class="galeri-video-card__play-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
                 </div>
@@ -202,7 +213,7 @@
                 <div class="galeri-video-card__footer">
                     <div class="galeri-video-card__info">
                         <strong>نشاط خدمة المجتمع</strong>
-                        <span>مؤسسة تراه منشور — 2026</span>
+                        <span>يايسان تراه منشور — 2026</span>
                     </div>
                     <div class="galeri-video-card__play-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
                 </div>
@@ -211,14 +222,14 @@
     </div>
 </section>
 
-<!-- ═══════════ النتائج ═══════════ -->
+<!-- ═══════════ النتائج الحقيقية ═══════════ -->
 <section id="hasil" class="section section--white">
     <div class="container">
         <div class="sec-header reveal">
             <span class="sec-eyebrow">أثر البرنامج</span>
-            <h2 class="sec-title">نتائج <em>حقيقية على أرض الواقع</em></h2>
+            <h2 class="sec-title">نتائج <em>حقيقية في الميدان</em></h2>
             <div class="sec-divider"></div>
-            <p class="sec-desc">توثيق نتائج برامج التمكين التي أحدثت أثراً مباشراً في المجتمع.</p>
+            <p class="sec-desc">توثيق نتائج برامج التمكين التي أحدثت أثراً مباشراً في المجتمعات.</p>
         </div>
 
         <div class="galeri-tabs reveal" id="hasil-tabs">
@@ -228,19 +239,19 @@
             </button>
             <button class="hasil-tab" data-hasil="video">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-                فيديو
+                مقاطع فيديو
             </button>
         </div>
 
         <div class="galeri-grid" id="hasilPhoto">
-            <div class="galeri-item" data-src="image/hasil1.jpeg" data-caption="نتيجة 1"><img src="image/fotoh1.jpeg" alt="نتيجة 1" loading="lazy"><div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
-            <div class="galeri-item" data-src="image/hasil2.jpeg" data-caption="نتيجة 2"><img src="image/fotoh2.jpeg" alt="نتيجة 2" loading="lazy"><div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
-            <div class="galeri-item" data-src="image/hasil3.jpeg" data-caption="نتيجة 3"><img src="image/fotoh3.jpeg" alt="نتيجة 3" loading="lazy"><div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
-            <div class="galeri-item" data-src="image/hasil4.jpeg" data-caption="نتيجة 4"><img src="image/fotoh4.jpeg" alt="نتيجة 4" loading="lazy"><div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
-            <div class="galeri-item" data-src="image/hasil1.jpeg" data-caption="نتيجة 5"><img src="image/fotoh5.jpeg" alt="نتيجة 5" loading="lazy"><div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
-            <div class="galeri-item" data-src="image/hasil2.jpeg" data-caption="نتيجة 6"><img src="image/fotoh6.jpeg" alt="نتيجة 6" loading="lazy"><div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
-            <div class="galeri-item" data-src="image/hasil3.jpeg" data-caption="نتيجة 7"><img src="image/fotoh7.jpeg" alt="نتيجة 7" loading="lazy"><div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
-            <div class="galeri-item" data-src="image/hasil4.jpeg" data-caption="نتيجة 8"><img src="image/fotoh8.jpeg" alt="نتيجة 8" loading="lazy"><div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+            <div class="galeri-item" data-src="image/hasil1.jpeg" data-caption="النتيجة 1"><img src="image/fotoh1.jpeg" alt="النتيجة 1" loading="lazy"><div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+            <div class="galeri-item" data-src="image/hasil2.jpeg" data-caption="النتيجة 2"><img src="image/fotoh2.jpeg" alt="النتيجة 2" loading="lazy"><div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+            <div class="galeri-item" data-src="image/hasil3.jpeg" data-caption="النتيجة 3"><img src="image/fotoh3.jpeg" alt="النتيجة 3" loading="lazy"><div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+            <div class="galeri-item" data-src="image/hasil4.jpeg" data-caption="النتيجة 4"><img src="image/fotoh4.jpeg" alt="النتيجة 4" loading="lazy"><div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+            <div class="galeri-item" data-src="image/hasil1.jpeg" data-caption="النتيجة 5"><img src="image/fotoh5.jpeg" alt="النتيجة 5" loading="lazy"><div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+            <div class="galeri-item" data-src="image/hasil2.jpeg" data-caption="النتيجة 6"><img src="image/fotoh6.jpeg" alt="النتيجة 6" loading="lazy"><div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+            <div class="galeri-item" data-src="image/hasil3.jpeg" data-caption="النتيجة 7"><img src="image/fotoh7.jpeg" alt="النتيجة 7" loading="lazy"><div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+            <div class="galeri-item" data-src="image/hasil4.jpeg" data-caption="النتيجة 8"><img src="image/fotoh8.jpeg" alt="النتيجة 8" loading="lazy"><div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
         </div>
 
         <div class="galeri-video-grid" id="hasilVideo" style="display:none;">
@@ -257,7 +268,7 @@
                 <div class="galeri-video-card__footer">
                     <div class="galeri-video-card__info">
                         <strong>نتائج برنامج المياه النظيفة</strong>
-                        <span>مؤسسة تراه منشور — 2026</span>
+                        <span>يايسان تراه منشور — 2026</span>
                     </div>
                     <div class="galeri-video-card__play-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
                 </div>
@@ -266,8 +277,29 @@
     </div>
 </section>
 
-<!-- ═══════════ LIGHTBOX ═══════════ -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="صورة مكبرة">
+<!-- ═══════════ صور المقالات ═══════════ -->
+<section id="foto-artikel" class="section section--cream">
+    <div class="container">
+        <div class="sec-header reveal">
+            <span class="sec-eyebrow">توثيق</span>
+            <h2 class="sec-title">صور <em>المقالات</em></h2>
+            <div class="sec-divider"></div>
+        </div>
+        <div class="galeri-grid">
+            <div class="galeri-item" data-src="image/artikel1.jpeg" data-caption="صورة المقال 1"><img src="image/artikel1.jpeg" alt="مقال 1" loading="lazy"><div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+            <div class="galeri-item" data-src="image/artikel2.jpeg" data-caption="صورة المقال 2"><img src="image/artikel2.jpeg" alt="مقال 2" loading="lazy"><div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+            <div class="galeri-item" data-src="image/artikel3.jpeg" data-caption="صورة المقال 3"><img src="image/artikel3.jpeg" alt="مقال 3" loading="lazy"><div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+            <div class="galeri-item" data-src="image/artikel4.jpeg" data-caption="صورة المقال 4"><img src="image/artikel4.jpeg" alt="مقال 4" loading="lazy"><div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+            <div class="galeri-item" data-src="image/artikel5.jpeg" data-caption="صورة المقال 5"><img src="image/artikel5.jpeg" alt="مقال 5" loading="lazy"><div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+            <div class="galeri-item" data-src="image/artikel6.jpeg" data-caption="صورة المقال 6"><img src="image/artikel6.jpeg" alt="مقال 6" loading="lazy"><div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+            <div class="galeri-item" data-src="image/artikel7.jpeg" data-caption="صورة المقال 7"><img src="image/artikel7.jpeg" alt="مقال 7" loading="lazy"><div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+            <div class="galeri-item" data-src="image/artikel8.jpeg" data-caption="صورة المقال 8"><img src="image/artikel8.jpeg" alt="مقال 8" loading="lazy"><div class="galeri-item__zoom"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ LIGHTBOX MODAL ═══════════ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="الصورة مكبّرة">
     <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
     <button class="lightbox__close" id="lightboxClose" aria-label="إغلاق">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
@@ -293,8 +325,8 @@
         <div class="kontak-layout">
             <div class="reveal">
                 <span class="collab-pill">🤝 لنتعاون معاً</span>
-                <h2 class="kontak__title">معاً نستطيع <em>تحقيق المزيد</em></h2>
-                <p class="kontak__desc">هل أنت مهتم بالتعاون أو التطوع أو دعم مؤسستنا؟ أبوابنا مفتوحة دائماً لكل من يريد إحداث فرق حقيقي.</p>
+                <h2 class="kontak__title">معاً نستطيع أن نفعل <em>أكثر</em></h2>
+                <p class="kontak__desc">هل أنت مهتم بالتعاون أو التطوع أو دعم مؤسستنا؟ أبوابنا مفتوحة دائماً لمن يريد إحداث فرق حقيقي.</p>
                 <div class="kontak__items">
                     <div class="kontak__item">
                         <div class="kontak__item-icon"></div>
@@ -315,7 +347,7 @@
                     <div class="kontak__item">
                         <div class="kontak__item-icon"></div>
                         <div>
-                            <div class="kontak__item-label">حساب بنكي</div>
+                            <div class="kontak__item-label">الحساب البنكي</div>
                             <div class="kontak__item-value">BJB KCP BOJONG GEDE: 0104330398100</div>
                         </div>
                     </div>
@@ -337,7 +369,7 @@
                         allowfullscreen=""
                         loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"
-                        title="موقع مؤسسة تراه منشور">
+                        title="موقع يايسان تراه منشور">
                     </iframe>
                 </div>
             </div>
@@ -345,9 +377,9 @@
     </div>
 </section>
 
-<!-- ═══════════ تذييل الصفحة ═══════════ -->
+<!-- ═══════════ FOOTER ═══════════ -->
 <footer class="footer">
-    <p>&copy; 2026 <strong>مؤسسة تراه منشور</strong> · جميع الحقوق محفوظة · صُنع بـ<span class="footer__gold">♥</span> للآخرين</p>
+    <p>&copy; 2026 <strong>يايسان تراه منشور</strong> · جميع الحقوق محفوظة · صُنع بـ <span class="footer__gold">♥</span> من أجل الآخرين</p>
 </footer>
 
 <script src="script.js"></script>
