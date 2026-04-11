@@ -46,7 +46,7 @@
      *  FIX: requestAnimationFrame sebelum observe agar browser selesai
      *       paint ulang layout sebelum observer dihitung.
     ══════════ */
-  var tabs        = document.querySelectorAll('.galeri-tab');
+    var tabs        = document.querySelectorAll('#galeri .galeri-tab');
     var galeriPhoto = document.getElementById('galeriPhoto');
     var galeriVideo = document.getElementById('galeriVideo');
 
@@ -320,4 +320,43 @@
         btnPrevAr.style.opacity = '0.3';
     }
 
+    /* ══════════ 8. HASIL TAB TOGGLE + LIGHTBOX FIX ══════════ */
+    var hasilTabs  = document.querySelectorAll('#hasil-tabs .hasil-tab');
+    var hasilPhoto = document.getElementById('hasilPhoto');
+    var hasilVideo = document.getElementById('hasilVideo');
+
+    // Daftarkan foto hasil ke galeriItems agar lightbox berfungsi
+    var hasilPhotoItems = hasilPhoto
+        ? Array.from(hasilPhoto.querySelectorAll('.galeri-item'))
+        : [];
+
+    hasilPhotoItems.forEach(function (item) {
+        var idx = galeriItems.length;
+        galeriItems.push(item);
+        item.addEventListener('click', function () { openLightbox(idx); });
+    });
+
+    // Tab toggle
+    if (hasilTabs.length && hasilPhoto && hasilVideo) {
+        hasilTabs.forEach(function (tab) {
+            tab.addEventListener('click', function () {
+                var target = tab.getAttribute('data-hasil');
+                hasilTabs.forEach(function (t) { t.classList.remove('active'); });
+                tab.classList.add('active');
+
+                if (target === 'foto') {
+                    hasilPhoto.style.display = 'grid';
+                    hasilVideo.style.display = 'none';
+                } else {
+                    hasilPhoto.style.display = 'none';
+                    hasilVideo.style.display = 'grid';
+                    hasilVideo.querySelectorAll('.reveal').forEach(function (el) {
+                        el.classList.add('visible');
+                    });
+                }
+            });
+        });
+    }
+
 })();
+
