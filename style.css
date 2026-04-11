@@ -1482,3 +1482,4 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
     box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
 .hasil-tab:hover:not(.active) { color: var(--ink-700); }
+
