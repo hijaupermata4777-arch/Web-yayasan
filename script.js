@@ -326,15 +326,6 @@
     var hasilVideo = document.getElementById('hasilVideo');
 
     // Daftarkan foto hasil ke galeriItems agar lightbox berfungsi
-    var hasilPhotoItems = hasilPhoto
-        ? Array.from(hasilPhoto.querySelectorAll('.galeri-item'))
-        : [];
-
-    hasilPhotoItems.forEach(function (item) {
-        var idx = galeriItems.length;
-        galeriItems.push(item);
-        item.addEventListener('click', function () { openLightbox(idx); });
-    });
 
     // Tab toggle
     if (hasilTabs.length && hasilPhoto && hasilVideo) {
@@ -359,12 +350,9 @@
     }
 
     // Daftarkan foto artikel ke galeriItems agar lightbox berfungsi
-    var artikelPhotoItems = document.querySelectorAll('#foto-artikel .galeri-item');
-    artikelPhotoItems.forEach(function (item) {
-    var idx = galeriItems.length;
-    galeriItems.push(item);
-    item.addEventListener('click', function () { openLightbox(idx); });
-});
+
+
+    
 
 })();
 
