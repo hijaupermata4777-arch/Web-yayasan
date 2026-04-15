@@ -20,7 +20,6 @@
         <li><a href="#video-profil">Profil</a></li>
         <li><a href="#galeri">Galeri</a></li>
         <li><a href="#hasil">Hasil</a></li>
-        <li><a href="#download">Unduh</a></li>
         <li><a href="#kontak">Kontak</a></li>
         <li class="nav__lang">
             <a href="index.html" class="active">ID</a>
@@ -105,26 +104,29 @@
                     <div class="video-slider__track">
                         <div class="video-card">
                             <div class="video-wrap">
-                                <iframe src=""
-                                    title="Trah Manshur Foundation Profile Video"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen loading="lazy"></iframe>
+                                <video width="640" height="360" controls>
+                                    <source src="video/v1.mp4" type="video/mp4">
+                                    <source src="video/v1.webm" type="video/webm">
+                                </video>
                             </div>
                         </div>
                         <div class="video-card">
                             <div class="video-wrap">
-                                <iframe src=""
-                                    title="Trah Manshur Foundation - Kegiatan 2"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen loading="lazy"></iframe>
+                                <video width="640" height="360" controls>
+                                    <source src="video/v2.mp4" type="video/mp4">
+                                    <source src="video/v2.webm" type="video/webm">
+                                </video>
                             </div>
                         </div>
+                        
                         <div class="video-card">
                             <div class="video-wrap">
-                                <iframe src=""
-                                    title="Trah Manshur Foundation - Kegiatan 3"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen loading="lazy"></iframe>
+                                <div class="galeri-video-card reveal">
+                                <video width="360" height="640" controls>
+                                    <source src="video/v3.mp4" type="video/mp4">
+                                    <source src="video/v3.webm" type="video/webm">
+                                </video>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -150,10 +152,6 @@
             <button class="galeri-tab active" data-tab="foto">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
                 Foto
-            </button>
-            <button class="galeri-tab" data-tab="video">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-                Video
             </button>
         </div>
 
@@ -382,66 +380,6 @@
 </section>
 
 <!-- ═══════════ FOTO ARTIKEL ═══════════ -->
-<section id="foto-artikel" class="section section--cream">
-    <div class="container">
-        <div class="sec-header reveal">
-            <span class="sec-eyebrow">Dokumentasi</span>
-            <h2 class="sec-title">Foto <em>Artikel</em></h2>
-            <div class="sec-divider"></div>
-        </div>
-
-        <div class="galeri-grid">
-            <div class="galeri-item" data-src="image/artikel1.jpeg" data-caption="Foto Artikel 1">
-                <img src="image/artikel1.jpeg" alt="Artikel 1" loading="lazy">
-                <div class="galeri-item__zoom">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
-                </div>
-            </div>
-            <div class="galeri-item" data-src="image/artikel2.jpeg" data-caption="Foto Artikel 2">
-                <img src="image/artikel2.jpeg" alt="Artikel 2" loading="lazy">
-                <div class="galeri-item__zoom">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
-                </div>
-            </div>
-            <div class="galeri-item" data-src="image/artikel3.jpeg" data-caption="Foto Artikel 3">
-                <img src="image/artikel3.jpeg" alt="Artikel 3" loading="lazy">
-                <div class="galeri-item__zoom">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
-                </div>
-            </div>
-            <div class="galeri-item" data-src="image/artikel4.jpeg" data-caption="Foto Artikel 4">
-                <img src="image/artikel4.jpeg" alt="Artikel 4" loading="lazy">
-                <div class="galeri-item__zoom">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
-                </div>
-            </div>
-            <div class="galeri-item" data-src="image/artikel5.jpeg" data-caption="Foto Artikel 5">
-                <img src="image/artikel5.jpeg" alt="Artikel 5" loading="lazy">
-                <div class="galeri-item__zoom">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
-                </div>
-            </div>
-            <div class="galeri-item" data-src="image/artikel6.jpeg" data-caption="Foto Artikel 6">
-                <img src="image/artikel6.jpeg" alt="Artikel 6" loading="lazy">
-                <div class="galeri-item__zoom">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
-                </div>
-            </div>
-            <div class="galeri-item" data-src="image/artikel7.jpeg" data-caption="Foto Artikel 7">
-                <img src="image/artikel7.jpeg" alt="Artikel 7" loading="lazy">
-                <div class="galeri-item__zoom">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
-                </div>
-            </div>
-            <div class="galeri-item" data-src="image/artikel8.jpeg" data-caption="Foto Artikel 8">
-                <img src="image/artikel8.jpeg" alt="Artikel 8" loading="lazy">
-                <div class="galeri-item__zoom">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- ═══════════ LIGHTBOX MODAL ═══════════ -->
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto diperbesar">
