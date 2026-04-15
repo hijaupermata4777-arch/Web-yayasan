@@ -667,7 +667,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 .galeri-video-card {
     display: flex;
-    flex-direction: column;
+    flex-direction: center;
     gap: 0.85rem;
 }
 .galeri-video-card .video-wrap {
@@ -1482,4 +1482,124 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
     box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
 .hasil-tab:hover:not(.active) { color: var(--ink-700); }
+
+/* ═══════════ VIDEO PROFIL SLIDER ═══════════ */
+
+/* Wrapper utama — batasi lebar maksimal */
+.video-slider-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Container slider — batasi tinggi supaya video tidak menjuntai */
+.video-slider-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #111;
+}
+
+/* Track yang geser */
+.video-slider .video-slider__track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Setiap kartu video — FIX UTAMA: lebar & tinggi dikunci */
+.video-slider .video-card {
+  min-width: 100%;
+  flex-shrink: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* FIX UTAMA: video dibungkus rapat, tidak melebihi container */
+.video-slider .video-wrap {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  background: #000;
+}
+
+/* FIX UTAMA: video itu sendiri dibatasi ukurannya */
+.video-slider .video-wrap video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  max-height: 70vh;          /* batasi tinggi maksimal 70% layar */
+  object-fit: contain;        /* jaga aspect ratio, tidak distorsi */
+  margin: 0 auto;
+  border-radius: 0;
+}
+
+/* ═══════════ KHUSUS VIDEO PORTRAIT (v3.mp4) ═══════════ */
+/* v3.mp4 punya ukuran 360x640 (portrait) — perlu perlakuan khusus */
+
+.video-slider .video-card:has(video[width="360"]) .video-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0a0a0a;
+  min-height: 400px;
+}
+
+.video-slider .video-card:has(video[width="360"]) .video-wrap video {
+  width: auto;
+  max-width: 45vw;            /* batasi lebar supaya tidak kebesaran */
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* ═══════════ GALERI VIDEO CARD (di section Galeri & Hasil) ═══════════ */
+.galeri-video-card .video-wrap {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+
+.galeri-video-card .video-wrap video {
+  display: block;
+  width: 100%;
+  max-height: 50vh;
+  object-fit: contain;
+  background: #000;
+}
+
+/* ═══════════ RESPONSIVE ═══════════ */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .video-slider .video-wrap video {
+    max-height: 50vh;
+  }
+
+  .video-slider .video-card:has(video[width="360"]) .video-wrap video {
+    max-width: 55vw;
+    max-height: 55vh;
+  }
+
+  .galeri-video-card .video-wrap video {
+    max-height: 40vh;
+  }
+}
+
+/* Mobile kecil */
+@media (max-width: 480px) {
+  .video-slider .video-wrap video {
+    max-height: 40vh;
+  }
+
+  .video-slider .video-card:has(video[width="360"]) .video-wrap video {
+    max-width: 60vw;
+    max-height: 45vh;
+  }
+
+  .galeri-video-card .video-wrap video {
+    max-height: 35vh;
+  }
+}
 
