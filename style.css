@@ -1528,8 +1528,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   display: block;
   width: 100%;
   max-width: 100%;
-  max-height: 70vh;          /* batasi tinggi maksimal 70% layar */
-  object-fit: contain;        /* jaga aspect ratio, tidak distorsi */
+  max-height: 45vh;
+  object-fit: contain;
   margin: 0 auto;
   border-radius: 0;
 }
@@ -1547,8 +1547,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 
 .video-slider .video-card:has(video[width="360"]) .video-wrap video {
   width: auto;
-  max-width: 45vw;            /* batasi lebar supaya tidak kebesaran */
-  max-height: 70vh;
+  max-width: 35vw;
+  max-height: 45vh;
   object-fit: contain;
   border-radius: 8px;
 }
@@ -1603,3 +1603,132 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   }
 }
 
+/* ══════════ SLIDER VIDEO CARD — card style inside slider ══════════ */
+.slider-video-card {
+    background: #0f2a1a;
+    border: 1px solid rgba(200, 155, 60, 0.2);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+    transition: transform 0.4s var(--ease-expo), box-shadow 0.4s ease, border-color 0.3s;
+}
+.slider-video-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 28px 64px rgba(0,0,0,0.55);
+    border-color: rgba(200, 155, 60, 0.45);
+}
+.slider-video-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--green-500), var(--gold-400), var(--gold-300));
+    z-index: 5;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s var(--ease-expo);
+    border-radius: 18px 18px 0 0;
+}
+.slider-video-card:hover::before { transform: scaleX(1); }
+
+/* Override label bar untuk dark background */
+.slider-video-card .galeri-video-card__label-bar {
+    background: rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(200,155,60,0.15);
+}
+.slider-video-card .galeri-video-card__tag {
+    background: rgba(200,155,60,0.12);
+    border-color: rgba(200,155,60,0.25);
+    color: var(--gold-300);
+}
+.slider-video-card:hover .galeri-video-card__tag {
+    background: rgba(200,155,60,0.2);
+    border-color: var(--gold-400);
+    color: var(--gold-300);
+}
+
+/* Override footer untuk dark background */
+.slider-video-card .galeri-video-card__footer {
+    background: rgba(255,255,255,0.04);
+    border-top: 1px solid rgba(200,155,60,0.15);
+}
+.slider-video-card .galeri-video-card__info strong {
+    color: var(--white);
+}
+.slider-video-card .galeri-video-card__info span {
+    color: rgba(255,255,255,0.45);
+}
+
+/* Pastikan video di dalam slider card tidak overflow */
+.slider-video-card .video-wrap {
+    border-radius: 0;
+    box-shadow: none;
+    max-width: 100%;
+    margin: 0;
+    background: #000;
+}
+.slider-video-card .video-wrap video {
+    width: 100%;
+    max-height: 42vh;
+    object-fit: contain;
+    display: block;
+}
+
+/* Portrait video (v3) di dalam card */
+.slider-video-card .video-wrap:has(video[width="360"]) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    background: #0a0a0a;
+}
+.slider-video-card .video-wrap:has(video[width="360"]) video {
+    width: auto;
+    max-width: 40vw;
+    max-height: 42vh;
+}
+
+/* Pastikan .video-card di slider pas dengan card di dalamnya */
+.video-slider .video-card {
+    padding: 0 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .slider-video-card .video-wrap video { max-height: 32vh; }
+    .slider-video-card .video-wrap:has(video[width="360"]) video {
+        max-width: 55vw;
+        max-height: 32vh;
+    }
+}
+
+/* ================================================================
+   ARTIKEL CARD
+================================================================ */
+.artikel-card {
+    background: var(--white);
+    border: 1px solid var(--ink-100);
+    border-radius: 16px;
+    padding: clamp(2rem, 5vw, 3.5rem);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(7,26,16,0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+.artikel-card__accent {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--green-500), var(--gold-400), var(--gold-300));
+    border-radius: 16px 16px 0 0;
+}
+.artikel-card p {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--ink-500);
+}
+.artikel-card p strong { color: var(--green-800); }
+.artikel-card__cta {
+    margin-top: 0.75rem;
+}
